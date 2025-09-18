@@ -1,0 +1,37 @@
+{
+    "name": "playwright_ui_tests_examples",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint . --ext .ts,.js",
+        "lint:fix": "eslint . --ext .ts,.js --fix",
+        "format": "prettier --write \"**/*.{js,ts,json,md}\"",
+        "format:check": "prettier --check \"**/*.{js,ts,json,md}\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mpisaryk/Playwright_UI_tests_examples.git"
+    },
+    "keywords": [],
+    "author": "Mikhail Pisaryk",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mpisaryk/Playwright_UI_tests_examples/issues"
+    },
+    "homepage": "https://github.com/mpisaryk/Playwright_UI_tests_examples#readme",
+    "description": "",
+    "devDependencies": {
+        "@playwright/test": "^1.55.0",
+        "@types/dotenv": "^6.1.1",
+        "@types/node": "^24.5.2",
+        "@typescript-eslint/eslint-plugin": "^8.44.0",
+        "@typescript-eslint/parser": "^8.44.0",
+        "eslint": "^9.35.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-playwright": "^2.2.2",
+        "prettier": "^3.6.2"
+    },
+    "dependencies": {
+        "dotenv": "^17.2.2"
+    }
+}
