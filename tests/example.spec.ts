@@ -83,4 +83,28 @@ test.describe('UI Tests Examples', () => {
         await expect(displayNoneButton).toBeHidden();
         await expect(offscreenButton).toBeHidden();
     });
+
+    // note for me - rewrite with env variables
+    test('Sample App', async ({ page }) => {
+        const sampleApp = page.locator('h3 > a').filter({ hasText: 'Sample App' });
+        await sampleApp.click();
+        const sampleAppHeader = page.getByRole('heading', { name: 'Sample App' });
+        await expect(sampleAppHeader).toBeVisible();
+
+        const userNameInput = page.getByPlaceholder('User Name');
+        const passwordInput = page.getByPlaceholder('********');
+        const logInButton = page.getByRole('button', { name: 'Log In' });
+
+        await userNameInput.fill('Misha');
+        // const userNameValue = userNameInput.inputValue();
+        // await expect(userNameValue).toHaveText('Misha');
+
+        await passwordInput.fill('pwd');
+        // const passwordInputValue = passwordInput.inputValue();
+        // await expect(passwordInputValue).toHaveValue('pwd');
+
+        await logInButton.click();
+        const loginStatus = page.locator('#loginstatus');
+        await expect(loginStatus).toHaveText('Welcome, Misha!');
+    });
 });
