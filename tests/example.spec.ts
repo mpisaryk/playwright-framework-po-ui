@@ -107,4 +107,19 @@ test.describe('UI Tests Examples', () => {
         const loginStatus = page.locator('#loginstatus');
         await expect(loginStatus).toHaveText('Welcome, Misha!');
     });
+
+    test('Text Input', async ({ page }) => {
+        const textInput = page.locator('h3 > a').filter({ hasText: 'Text Input' });
+        await textInput.click();
+        const textInputHeader = page.getByRole('heading', { name: 'Text Input' });
+        await expect(textInputHeader).toBeVisible();
+
+        const buttonNameInput = page.getByPlaceholder('MyButton');
+        const buttonWithChangeableName = page.locator('#updatingButton');
+
+        await buttonNameInput.click();
+        await page.keyboard.type('Test Button');
+        await buttonWithChangeableName.click();
+        await expect(buttonWithChangeableName).toHaveText('Test Button');
+    });
 });
