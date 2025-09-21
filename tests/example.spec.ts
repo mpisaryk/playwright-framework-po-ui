@@ -5,7 +5,7 @@ test.describe('UI Tests Examples', () => {
         await page.goto('/');
     });
 
-    test('Overlapped Element test', async ({ page }) => {
+    test('Overlapped Element', async ({ page }) => {
         const overlappedElement = page.locator('h3 > a').filter({ hasText: 'Overlapped Element' });
         await overlappedElement.click();
         const overlappedElementHeader = page.getByRole('heading', { name: 'Overlapped Element' });
@@ -21,7 +21,7 @@ test.describe('UI Tests Examples', () => {
         await expect(inputNameField).toHaveValue('Misha');
     });
 
-    test('AJAX Data test', async ({ page }) => {
+    test('AJAX Data', async ({ page }) => {
         const ajaxData = page.locator('h3 > a').filter({ hasText: 'AJAX DATA' });
         await ajaxData.click();
         const ajaxDataHeader = page.getByRole('heading', { name: 'AJAX Data' });
@@ -38,7 +38,7 @@ test.describe('UI Tests Examples', () => {
         await successLabel.click();
     });
 
-    test('Visibility test', async ({ page }) => {
+    test('Visibility', async ({ page }) => {
         const visibility = page.locator('h3 > a').filter({ hasText: 'Visibility' });
         await visibility.click();
         const hideButton = page.getByRole('button', { name: 'Hide' });
@@ -82,6 +82,28 @@ test.describe('UI Tests Examples', () => {
         await expect(visibilityHiddenButton).toBeHidden();
         await expect(displayNoneButton).toBeHidden();
         await expect(offscreenButton).toBeHidden();
+    });
+
+    test('Dynamic Table', async ({ page }) => {
+        const dynamicTable = page.getByRole('link', { name: 'Dynamic Table' });
+        await dynamicTable.click();
+        const dynamicTableHeader = page.getByRole('heading', { name: 'Dynamic Table' });
+        await expect(dynamicTableHeader).toBeVisible();
+
+        const cpuIndex = await page
+            .locator('[role="columnheader"]')
+            .evaluateAll((headers) =>
+                headers.findIndex((header) => header.textContent?.trim() === 'CPU'),
+            );
+        const chromeRow = page.locator('[role="row"]', { hasText: 'Chrome' });
+        const cpuValue = await chromeRow.locator('[role="cell"]').nth(cpuIndex).innerText();
+        const cpuValueNumber = cpuValue.match(/(\d+(\.\d+)?)%/)?.[1];
+
+        const yellowLabel = page.locator('p.bg-warning');
+        const yellowLabelText = await yellowLabel.innerText();
+        const yellowCpuValue = yellowLabelText.match(/(\d+(\.\d+)?)%/)?.[1];
+
+        expect(cpuValueNumber).toEqual(yellowCpuValue);
     });
 
     // note for me - rewrite with env variables
