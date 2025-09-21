@@ -122,4 +122,25 @@ test.describe('UI Tests Examples', () => {
         await buttonWithChangeableName.click();
         await expect(buttonWithChangeableName).toHaveText('Test Button');
     });
+
+    test('Progress Bar', async ({ page }) => {
+        const textInput = page.locator('h3 > a').filter({ hasText: 'Progress Bar' });
+        await textInput.click();
+        const textInputHeader = page.getByRole('heading', { name: 'Progress Bar' });
+        await expect(textInputHeader).toBeVisible();
+
+        const startButton = page.getByRole('button', { name: 'Start' });
+        const stopButton = page.getByRole('button', { name: 'Stop' });
+        const progressBar = page.locator('#progressBar');
+
+        await startButton.click();
+        await page.waitForFunction(
+            (el) => Number(el.getAttribute('aria-valuenow')) >= 75,
+            await progressBar.elementHandle(),
+        );
+        await stopButton.click();
+
+        const finalProgressBarValue = Number(await progressBar.getAttribute('aria-valuenow'));
+        expect(finalProgressBarValue).toBe(75);
+    });
 });
