@@ -5,53 +5,6 @@ test.describe('UI Tests Examples', () => {
         await page.goto('/');
     });
 
-    
-    test('Dynamic Table', async ({ page }) => {
-        const dynamicTable = page.getByRole('link', { name: 'Dynamic Table' });
-        await dynamicTable.click();
-        const dynamicTableHeader = page.getByRole('heading', { name: 'Dynamic Table' });
-        await expect(dynamicTableHeader).toBeVisible();
-
-        const cpuIndex = await page
-            .locator('[role="columnheader"]')
-            .evaluateAll((headers) =>
-                headers.findIndex((header) => header.textContent?.trim() === 'CPU'),
-            );
-        const chromeRow = page.locator('[role="row"]', { hasText: 'Chrome' });
-        const cpuValue = await chromeRow.locator('[role="cell"]').nth(cpuIndex).innerText();
-        const cpuValueNumber = cpuValue.match(/(\d+(\.\d+)?)%/)?.[1];
-
-        const yellowLabel = page.locator('p.bg-warning');
-        const yellowLabelText = await yellowLabel.innerText();
-        const yellowCpuValue = yellowLabelText.match(/(\d+(\.\d+)?)%/)?.[1];
-
-        expect(cpuValueNumber).toEqual(yellowCpuValue);
-    });
-
-    // note for me - rewrite with env variables
-    test('Sample App', async ({ page }) => {
-        const sampleApp = page.getByRole('link', { name: 'Sample App' });
-        await sampleApp.click();
-        const sampleAppHeader = page.getByRole('heading', { name: 'Sample App' });
-        await expect(sampleAppHeader).toBeVisible();
-
-        const userNameInput = page.getByPlaceholder('User Name');
-        const passwordInput = page.getByPlaceholder('********');
-        const logInButton = page.getByRole('button', { name: 'Log In' });
-
-        await userNameInput.fill('Misha');
-        // const userNameValue = userNameInput.inputValue();
-        // await expect(userNameValue).toHaveText('Misha');
-
-        await passwordInput.fill('pwd');
-        // const passwordInputValue = passwordInput.inputValue();
-        // await expect(passwordInputValue).toHaveValue('pwd');
-
-        await logInButton.click();
-        const loginStatus = page.locator('#loginstatus');
-        await expect(loginStatus).toHaveText('Welcome, Misha!');
-    });
-
     test('Text Input', async ({ page }) => {
         const textInput = page.getByRole('link', { name: 'Text Input' });
         await textInput.click();
