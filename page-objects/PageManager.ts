@@ -3,6 +3,7 @@ import { HomePage } from './HomePage';
 import { OverlappedElementPage } from './OverlappedElementPage';
 import { AjaxDataPage } from './AjaxDataPage';
 import { VisibilityPage } from './VisibilityPage';
+import { DynamicTablePage } from './DynamicTable';
 
 export class PageManager {
     private readonly page: Page;
@@ -10,6 +11,7 @@ export class PageManager {
     private readonly overlappedElementPage: OverlappedElementPage;
     private readonly ajaxDataPage: AjaxDataPage;
     private readonly visibilityPage: VisibilityPage;
+    private readonly dynamicTablePage: DynamicTablePage;
 
     constructor(page: Page) {
         this.page = page;
@@ -17,6 +19,7 @@ export class PageManager {
         this.overlappedElementPage = new OverlappedElementPage(this.page);
         this.ajaxDataPage = new AjaxDataPage(this.page);
         this.visibilityPage = new VisibilityPage(this.page);
+        this.dynamicTablePage = new DynamicTablePage(this.page);
     }
 
     onHomePage() {
@@ -33,5 +36,9 @@ export class PageManager {
 
     onVisibilityPage() {
         return this.visibilityPage;
+    }
+
+    onDynamicTablePage() {
+        return this.dynamicTablePage;
     }
 }

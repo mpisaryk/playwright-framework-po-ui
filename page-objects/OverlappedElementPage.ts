@@ -6,14 +6,14 @@ import { type Locator, type Page } from '@playwright/test';
  */
 export class OverlappedElementPage {
     readonly page: Page;
-    readonly overlappedElementHeader: Locator;
+    readonly overlappedElementPageHeader: Locator;
     readonly nameInputField: Locator;
 
     constructor(page: Page) {
         this.page = page;
 
         // Locate the header element by its role "heading" and visible text "Overlapped Element"
-        this.overlappedElementHeader = page.getByRole('heading', { name: 'Overlapped Element' });
+        this.overlappedElementPageHeader = page.getByRole('heading', { name: 'Overlapped Element' });
 
         // Locate the input field by its placeholder attribute "Name"
         this.nameInputField = page.getByPlaceholder('Name');

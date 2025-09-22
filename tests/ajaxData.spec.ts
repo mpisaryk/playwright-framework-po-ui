@@ -12,7 +12,7 @@ test('AJAX Data', async ({ page }) => {
     await pm.onHomePage().clickAjaxDataLink();
 
     // Verify that the header of the "AJAX Data" page is visible
-    await expect(pm.onAjaxDataPage().ajaxDataHeader).toBeVisible();
+    await expect(pm.onAjaxDataPage().ajaxDataPageHeader).toBeVisible();
 
     // Click the button to trigger the AJAX request
     await pm.onAjaxDataPage().buttonAjaxTrigger.click();

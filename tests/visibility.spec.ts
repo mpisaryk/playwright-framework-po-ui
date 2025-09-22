@@ -12,7 +12,7 @@ test('Visibility', async ({ page }) => {
     await pm.onHomePage().clickVisibilityLink();
 
     // Verify that the header of the "Visibility" page is visible
-    await expect(pm.onVisibilityPage().visibilityHeader).toBeVisible();
+    await expect(pm.onVisibilityPage().visibilityPageHeader).toBeVisible();
 
     // Click the "Hide" button to trigger visibility changes
     await pm.onVisibilityPage().hideButton.click();

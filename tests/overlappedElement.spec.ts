@@ -17,7 +17,7 @@ test('Overlapped Element', async ({ page }) => {
     await pm.onHomePage().clickOverlappedElementLink();
 
     // Verify that the header of the "Overlapped Element" page is visible
-    await expect(pm.onOverlappedElementPage().overlappedElementHeader).toBeVisible();
+    await expect(pm.onOverlappedElementPage().overlappedElementPageHeader).toBeVisible();
 
     // Scroll the Name input field into view
     await pm.onOverlappedElementPage().scrollToNameInput();

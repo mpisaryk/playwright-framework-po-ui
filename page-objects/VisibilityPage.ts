@@ -6,7 +6,7 @@ import { type Locator, type Page } from '@playwright/test';
  */
 export class VisibilityPage {
     readonly page: Page;
-    readonly visibilityHeader: Locator;
+    readonly visibilityPageHeader: Locator;
     readonly hideButton: Locator;
     readonly removedButton: Locator;
     readonly zeroWidthButton: Locator;
@@ -20,7 +20,7 @@ export class VisibilityPage {
         this.page = page;
 
         // Locate the header element by its role "heading" and visible text "Visibility"
-        this.visibilityHeader = page.getByRole('heading', { name: 'Visibility' });
+        this.visibilityPageHeader = page.getByRole('heading', { name: 'Visibility' });
 
         // Locate the buttons by their role "button" and visible names
         this.hideButton = page.getByRole('button', { name: 'Hide' });

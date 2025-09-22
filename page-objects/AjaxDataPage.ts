@@ -6,7 +6,7 @@ import { type Locator, type Page } from '@playwright/test';
  */
 export class AjaxDataPage {
     readonly page: Page;
-    readonly ajaxDataHeader: Locator;
+    readonly ajaxDataPageHeader: Locator;
     readonly buttonAjaxTrigger: Locator;
     readonly successLabel: Locator;
 
@@ -14,7 +14,7 @@ export class AjaxDataPage {
         this.page = page;
 
         // Locate the header element by its role "heading" and visible text "AJAX Data"
-        this.ajaxDataHeader = page.getByRole('heading', { name: 'AJAX Data' });
+        this.ajaxDataPageHeader = page.getByRole('heading', { name: 'AJAX Data' });
 
         // Locate the button that triggers the AJAX request by its role "button" and visible name "Button Triggering AJAX Request"
         this.buttonAjaxTrigger = page.getByRole('button', {
