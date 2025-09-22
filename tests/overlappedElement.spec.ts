@@ -14,7 +14,7 @@ test('Overlapped Element', async ({ page }) => {
     await pm.onHomePage().goToHomePage();
 
     // Click on the link to open the "Overlapped Element" page
-    await pm.onHomePage().clickOverlappedElement();
+    await pm.onHomePage().clickOverlappedElementLink();
 
     // Verify that the header of the "Overlapped Element" page is visible
     await expect(pm.onOverlappedElementPage().overlappedElementHeader).toBeVisible();

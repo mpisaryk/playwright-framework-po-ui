@@ -11,8 +11,10 @@ export class OverlappedElementPage {
 
     constructor(page: Page) {
         this.page = page;
+
         // Locate the header element by its role "heading" and visible text "Overlapped Element"
         this.overlappedElementHeader = page.getByRole('heading', { name: 'Overlapped Element' });
+
         // Locate the input field by its placeholder attribute "Name"
         this.nameInputField = page.getByPlaceholder('Name');
     }
