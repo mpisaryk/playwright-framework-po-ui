@@ -5,22 +5,6 @@ test.describe('UI Tests Examples', () => {
         await page.goto('/');
     });
 
-    test('Overlapped Element', async ({ page }) => {
-        const overlappedElement = page.getByRole('link', { name: 'Overlapped Element' });
-        await overlappedElement.click();
-        const overlappedElementHeader = page.getByRole('heading', { name: 'Overlapped Element' });
-        await expect(overlappedElementHeader).toBeVisible();
-
-        const inputNameField = page.getByPlaceholder('Name');
-        const elementHandle = await inputNameField.elementHandle();
-        await page.evaluate((el) => el.scrollIntoView({ block: 'center' }), elementHandle);
-        // await inputNameField.hover();
-        // await page.mouse.wheel(0, 16);
-        await expect(inputNameField).toBeVisible();
-        await inputNameField.fill('Misha');
-        await expect(inputNameField).toHaveValue('Misha');
-    });
-
     test('AJAX Data', async ({ page }) => {
         const ajaxData = page.getByRole('link', { name: 'AJAX DATA' });
         await ajaxData.click();

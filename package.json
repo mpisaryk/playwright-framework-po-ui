@@ -21,6 +21,7 @@
     "homepage": "https://github.com/mpisaryk/Playwright_UI_tests_examples#readme",
     "description": "",
     "devDependencies": {
+        "@faker-js/faker": "^10.0.0",
         "@playwright/test": "^1.55.0",
         "@types/dotenv": "^6.1.1",
         "@types/node": "^24.5.2",
