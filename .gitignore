@@ -19,3 +19,7 @@ env/.env.*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Allure results and reports
+allure-results/
+allure-report/
