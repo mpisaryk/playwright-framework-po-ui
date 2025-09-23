@@ -5,20 +5,7 @@ test.describe('UI Tests Examples', () => {
         await page.goto('/');
     });
 
-    test('Text Input', async ({ page }) => {
-        const textInput = page.getByRole('link', { name: 'Text Input' });
-        await textInput.click();
-        const textInputHeader = page.getByRole('heading', { name: 'Text Input' });
-        await expect(textInputHeader).toBeVisible();
-
-        const buttonNameInput = page.getByPlaceholder('MyButton');
-        const buttonWithChangeableName = page.locator('#updatingButton');
-
-        await buttonNameInput.click();
-        await page.keyboard.type('Test Button');
-        await buttonWithChangeableName.click();
-        await expect(buttonWithChangeableName).toHaveText('Test Button');
-    });
+    
 
     test('Progress Bar', async ({ page }) => {
         const textInput = page.getByRole('link', { name: 'Progress Bar' });

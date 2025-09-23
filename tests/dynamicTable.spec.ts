@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { PageManager } from '../page-objects/PageManager';
 import { TASK_MANAGER_NAME_VALUE } from '../test-data/TestData';
 
-test('AJAX Data', async ({ page }) => {
+test('Dynamic Table', async ({ page }) => {
     // Initialize the Page Manager to work with Page Objects
     const pm = new PageManager(page);
 

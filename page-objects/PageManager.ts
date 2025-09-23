@@ -6,6 +6,7 @@ import { VisibilityPage } from './VisibilityPage';
 import { DynamicTablePage } from './DynamicTable';
 import { SampleAppPage } from './SampleAppPage';
 import { TextInputPage } from './TextInputPage';
+import { ProgressBarPage } from './ProgressBarPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -23,6 +24,7 @@ export class PageManager {
     private readonly dynamicTablePage: DynamicTablePage;
     private readonly sampleAppPage: SampleAppPage;
     private readonly textInputPage: TextInputPage;
+    private readonly progressBarPage: ProgressBarPage;
 
     constructor(page: Page) {
         this.page = page;
@@ -35,6 +37,7 @@ export class PageManager {
         this.dynamicTablePage = new DynamicTablePage(this.page);
         this.sampleAppPage = new SampleAppPage(this.page);
         this.textInputPage = new TextInputPage(this.page);
+        this.progressBarPage = new ProgressBarPage(this.page);
     }
 
     /**
@@ -84,5 +87,12 @@ export class PageManager {
      */
     onTextInputPage() {
         return this.textInputPage;
+    }
+
+    /**
+     * Accessor for the ProgressBarPage object
+     */
+    onProgressBarPage() {
+        return this.progressBarPage;
     }
 }

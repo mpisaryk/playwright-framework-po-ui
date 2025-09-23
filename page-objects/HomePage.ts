@@ -12,6 +12,7 @@ export class HomePage {
     readonly dynamicTableLink: Locator;
     readonly sampleAppLink: Locator;
     readonly textInputLink: Locator;
+    readonly progressBarLink: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -33,6 +34,9 @@ export class HomePage {
 
         // Link to "Text Input" page
         this.textInputLink = page.getByRole('link', { name: 'Text Input' });
+
+        // Link to "Progress Bar" page
+        this.progressBarLink = page.getByRole('link', { name: 'Progress Bar' });
     }
 
     /**
@@ -82,5 +86,12 @@ export class HomePage {
      */
     async clickTextInputLink() {
         await this.textInputLink.click();
+    }
+    
+    /**
+     * Click on the "Progress Bar" link.
+     */
+    async clickProgressBarLink() {
+        await this.progressBarLink.click();
     }
 }
