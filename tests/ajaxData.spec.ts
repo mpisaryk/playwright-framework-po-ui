@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { PageManager } from '../page-objects/PageManager';
 
 test('AJAX Data', async ({ page }) => {
-    // Initialize the Page Manager
+    // Initialize the Page Manager to work with Page Objects
     const pm = new PageManager(page);
 
     // Navigate to the Home page

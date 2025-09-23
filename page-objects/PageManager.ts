@@ -5,6 +5,7 @@ import { AjaxDataPage } from './AjaxDataPage';
 import { VisibilityPage } from './VisibilityPage';
 import { DynamicTablePage } from './DynamicTable';
 import { SampleAppPage } from './SampleAppPage';
+import { TextInputPage } from './TextInputPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -21,6 +22,7 @@ export class PageManager {
     private readonly visibilityPage: VisibilityPage;
     private readonly dynamicTablePage: DynamicTablePage;
     private readonly sampleAppPage: SampleAppPage;
+    private readonly textInputPage: TextInputPage;
 
     constructor(page: Page) {
         this.page = page;
@@ -32,6 +34,7 @@ export class PageManager {
         this.visibilityPage = new VisibilityPage(this.page);
         this.dynamicTablePage = new DynamicTablePage(this.page);
         this.sampleAppPage = new SampleAppPage(this.page);
+        this.textInputPage = new TextInputPage(this.page);
     }
 
     /**
@@ -74,5 +77,12 @@ export class PageManager {
      */
     onSampleAppPage() {
         return this.sampleAppPage;
+    }
+
+    /**
+     * Accessor for the TextInputPage object
+     */
+    onTextInputPage() {
+        return this.textInputPage;
     }
 }

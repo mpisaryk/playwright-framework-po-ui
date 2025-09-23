@@ -3,7 +3,7 @@ import { PageManager } from '../page-objects/PageManager';
 import { faker } from '@faker-js/faker';
 
 test('Overlapped Element', async ({ page }) => {
-    // Initialize the Page Manager
+    // Initialize the Page Manager to work with Page Objects
     const pm = new PageManager(page);
 
     // Generate a unique name for Playground using Faker

@@ -11,6 +11,7 @@ export class HomePage {
     readonly visibilityLink: Locator;
     readonly dynamicTableLink: Locator;
     readonly sampleAppLink: Locator;
+    readonly textInputLink: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -29,6 +30,9 @@ export class HomePage {
 
         // Link to "Sample App" page
         this.sampleAppLink = page.getByRole('link', { name: 'Sample App' });
+
+        // Link to "Text Input" page
+        this.textInputLink = page.getByRole('link', { name: 'Text Input' });
     }
 
     /**
@@ -71,5 +75,12 @@ export class HomePage {
      */
     async clickSampleAppLink() {
         await this.sampleAppLink.click();
+    }
+
+    /**
+     * Click on the "Text Input" link.
+     */
+    async clickTextInputLink() {
+        await this.textInputLink.click();
     }
 }
