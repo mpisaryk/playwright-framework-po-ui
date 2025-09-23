@@ -7,10 +7,12 @@
         "lint:fix": "eslint . --ext .ts,.js --fix",
         "format": "prettier --write \"**/*.{js,ts,json,md}\"",
         "format:check": "prettier --check \"**/*.{js,ts,json,md}\"",
-        "test:dev": "cross-env ENVIRONMENT=dev npx playwright test",
-        "test:prod": "cross-env ENVIRONMENT=prod npx playwright test",
-        "test:report": "playwright test && npx allure generate allure-results --clean -o allure-report && npx allure open allure-report",
-        "test:headed": "playwright test --headed"
+        "test:prod:headed": "cross-env ENVIRONMENT=prod npx playwright test --project=chromium --headed",
+        "test:dev:headed": "cross-env ENVIRONMENT=dev npx playwright test --project=chromium --headed",
+        "test:prod:headless": "cross-env ENVIRONMENT=prod npx playwright test --project=chromium",
+        "test:dev:headless": "cross-env ENVIRONMENT=dev npx playwright test --project=chromium",
+        "test:prod:headless:report": "cross-env ENVIRONMENT=prod npx playwright test --project=chromium && allure generate allure-results --clean -o allure-report && allure open allure-report",
+        "test:dev:headless:report": "cross-env ENVIRONMENT=dev npx playwright test --project=chromium && allure generate allure-results --clean -o allure-report && allure open allure-report"
     },
     "repository": {
         "type": "git",
