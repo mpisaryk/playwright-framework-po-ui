@@ -28,7 +28,7 @@ test('Visibility', async ({ page }) => {
     // "Zero Width" button is hidden
     await expect(pm.onVisibilityPage().zeroWidthButton).toBeHidden();
 
-    // "Overlapped" button is covered by another element
+    // Check that the "Overlapped" button is covered by another element
     expect(pm.onVisibilityPage().getTopElementIdOfOverlappedButton()).not.toBe(
         pm.onVisibilityPage().getOverlappedButtonId(),
     );

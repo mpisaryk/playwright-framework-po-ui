@@ -17,7 +17,7 @@ test('Sample App', async ({ page }) => {
     // Perform login using credentials from environment variables
     await pm
         .onSampleAppPage()
-        .login(process.env.USER_NAME || 'defaultUser', process.env.PASSWORD || 'defaultPassword');
+        .login(process.env.USER_NAME || 'defaultUser', process.env.PASSWORD || '123');
 
     // Verify that the login status message is displayed correctly
     await expect(pm.onSampleAppPage().loginStatus).toHaveText(

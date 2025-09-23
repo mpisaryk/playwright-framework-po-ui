@@ -25,6 +25,6 @@ test('Overlapped Element', async ({ page }) => {
     // Fill the Name input field with the generated Playground name
     await pm.onOverlappedElementPage().nameInputField.fill(playgroundName);
 
-    // Verify that the text was entered correctly.
+    // Verify that the text was entered correctly
     await expect(pm.onOverlappedElementPage().nameInputField).toHaveValue(playgroundName);
 });
