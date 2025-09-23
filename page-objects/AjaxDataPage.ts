@@ -13,6 +13,12 @@ export class AjaxDataPage {
     constructor(page: Page) {
         this.page = page;
 
+        /**
+         * Locators are selected based on Playwright best practices, where possible:
+         * - Prefer user-facing attributes over implementation details (like classes or IDs)
+         * - Ensure that locators reflect user-visible behavior
+         */
+
         // Locate the header element by its role "heading" and visible text "AJAX Data"
         this.ajaxDataPageHeader = page.getByRole('heading', { name: 'AJAX Data' });
 
@@ -21,7 +27,7 @@ export class AjaxDataPage {
             name: 'Button Triggering AJAX Request',
         });
 
-        // Locate the paragraph that appears after the AJAX request succeeds
+        // Locate the label that appears after the AJAX request succeeds
         this.successLabel = page
             .locator('#content p')
             .filter({ hasText: 'Data loaded with AJAX get request.' });

@@ -19,6 +19,12 @@ export class VisibilityPage {
     constructor(page: Page) {
         this.page = page;
 
+        /**
+         * Locators are selected based on Playwright best practices, where possible:
+         * - Prefer user-facing attributes over implementation details (like classes or IDs)
+         * - Ensure that locators reflect user-visible behavior
+         */
+
         // Locate the header element by its role "heading" and visible text "Visibility"
         this.visibilityPageHeader = page.getByRole('heading', { name: 'Visibility' });
 
@@ -36,7 +42,7 @@ export class VisibilityPage {
     /**
      * Returns the ID of the topmost element at the center of the overlapped button
      */
-    async getTopElementIdOfOverlappedButton() {
+    async getTopElementIdOfOverlappedButton(): Promise<string | null> {
         // Get bounding box of the overlapped button
         const box = await this.overlappedButton.boundingBox();
         if (!box) return null; // safety check
@@ -47,7 +53,7 @@ export class VisibilityPage {
 
         // Get the element id at the coordinates
         const topElementId = await this.page.evaluate(
-            ({ x, y }) => document.elementFromPoint(x, y)?.id,
+            ({ x, y }) => document.elementFromPoint(x, y)?.id ?? null, // <-- convert undefined to null
             { x: centerX, y: centerY },
         );
 
@@ -57,7 +63,7 @@ export class VisibilityPage {
     /**
      * Returns the ID of the Overlapped button
      */
-    async getOverlappedButtonId() {
+    async getOverlappedButtonId(): Promise<string | null> {
         return await this.overlappedButton.getAttribute('id');
     }
 }

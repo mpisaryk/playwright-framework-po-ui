@@ -12,8 +12,16 @@ export class OverlappedElementPage {
     constructor(page: Page) {
         this.page = page;
 
+        /**
+         * Locators are selected based on Playwright best practices, where possible:
+         * - Prefer user-facing attributes over implementation details (like classes or IDs)
+         * - Ensure that locators reflect user-visible behavior
+         */
+
         // Locate the header element by its role "heading" and visible text "Overlapped Element"
-        this.overlappedElementPageHeader = page.getByRole('heading', { name: 'Overlapped Element' });
+        this.overlappedElementPageHeader = page.getByRole('heading', {
+            name: 'Overlapped Element',
+        });
 
         // Locate the input field by its placeholder attribute "Name"
         this.nameInputField = page.getByPlaceholder('Name');
@@ -23,7 +31,7 @@ export class OverlappedElementPage {
      * Scrolls the "Name" input field into the center of the viewport.
      * It uses a direct elementHandle and page.evaluate for reliable scrolling.
      */
-    async scrollToNameInput() {
+    async scrollToNameInput(): Promise<void> {
         // Get the ElementHandle from the Locator
         const handle = await this.nameInputField.elementHandle();
         // Throw an error if the element is not found (safety check)

@@ -14,6 +14,12 @@ export class ProgressBarPage {
     constructor(page: Page) {
         this.page = page;
 
+        /**
+         * Locators are selected based on Playwright best practices, where possible:
+         * - Prefer user-facing attributes over implementation details (like classes or IDs)
+         * - Ensure that locators reflect user-visible behavior
+         */
+
         // Locate the header element by its role "heading" and visible text "Progress Bar"
         this.progressBarPageHeader = page.getByRole('heading', { name: 'Progress Bar' });
 
@@ -29,7 +35,7 @@ export class ProgressBarPage {
      * Waits until the progress bar reaches or exceeds the given value.
      * @param value number - the minimum percentage to wait for
      */
-    async waitForProgressToReach(value: number) {
+    async waitForProgressToReach(value: number): Promise<void> {
         // Get the element handle of the progress bar
         const handle = await this.progressBar.elementHandle();
         if (!handle) throw new Error('Progress bar element not found');

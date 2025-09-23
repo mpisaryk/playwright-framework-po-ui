@@ -14,6 +14,12 @@ export class DynamicTablePage {
     constructor(page: Page) {
         this.page = page;
 
+        /**
+         * Locators are selected based on Playwright best practices, where possible:
+         * - Prefer user-facing attributes over implementation details (like classes or IDs)
+         * - Ensure that locators reflect user-visible behavior
+         */
+
         // Locate the header element by its role "heading" and visible text "Dynamic Table"
         this.dynamicTablePageHeader = page.getByRole('heading', { name: 'Dynamic Table' });
 
@@ -28,7 +34,7 @@ export class DynamicTablePage {
      * Get the index of a column by its header text
      * @param columnName - Task manager column name (e.g., "CPU")
      */
-    async getColumnIndex(columnName: string) {
+    async getColumnIndex(columnName: string): Promise<number> {
         return this.tableHeaders.evaluateAll((headers, columnName) => {
             // Iterate over all headers and return the index of the matching one
             return headers.findIndex((header) => header.textContent?.trim() === columnName);
@@ -45,7 +51,7 @@ export class DynamicTablePage {
      * @param taskManagerNameValue - Name of the row (e.g., "Chrome")
      * @returns CPU value as a number, or null if not found
      */
-    async getCpuValueForRow(taskManagerNameValue: string) {
+    async getCpuValueForRow(taskManagerNameValue: string): Promise<number | null> {
         const cpuColumnIndex = await this.getColumnIndex(TASK_MANAGER_COLUMN);
         const row = this.page.locator('[role="row"]', { hasText: taskManagerNameValue });
         const cpuValue = await row.locator('[role="cell"]').nth(cpuColumnIndex).innerText();
@@ -60,7 +66,7 @@ export class DynamicTablePage {
      *
      * @returns CPU value as a number, or null if not found
      */
-    async getYellowCpuValue() {
+    async getYellowCpuValue(): Promise<number | null> {
         const text = await this.yellowLabel.innerText();
         const match = text.match(/(\d+(\.\d+)?)%/);
         return match ? parseFloat(match[1]) : null;

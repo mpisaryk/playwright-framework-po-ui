@@ -17,6 +17,12 @@ export class HomePage {
     constructor(page: Page) {
         this.page = page;
 
+        /**
+         * Locators are selected based on Playwright best practices, where possible:
+         * - Prefer user-facing attributes over implementation details (like classes or IDs)
+         * - Ensure that locators reflect user-visible behavior
+         */
+
         // Link to "Overlapped Element" page
         this.overlappedElementLink = page.getByRole('link', { name: 'Overlapped Element' });
 
@@ -42,56 +48,56 @@ export class HomePage {
     /**
      * Navigate directly to the Home page.
      */
-    async goToHomePage() {
+    async goToHomePage(): Promise<void> {
         await this.page.goto('/');
     }
 
     /**
      * Click on the "Overlapped Element" link.
      */
-    async clickOverlappedElementLink() {
+    async clickOverlappedElementLink(): Promise<void> {
         await this.overlappedElementLink.click();
     }
 
     /**
      * Click on the "AJAX Data" link.
      */
-    async clickAjaxDataLink() {
+    async clickAjaxDataLink(): Promise<void> {
         await this.ajaxDataLink.click();
     }
 
     /**
      * Click on the "Visibility" link.
      */
-    async clickVisibilityLink() {
+    async clickVisibilityLink(): Promise<void> {
         await this.visibilityLink.click();
     }
 
     /**
      * Click on the "Dynamic Table" link.
      */
-    async clickDynamicTableLink() {
+    async clickDynamicTableLink(): Promise<void> {
         await this.dynamicTableLink.click();
     }
 
     /**
      * Click on the "Sample App" link.
      */
-    async clickSampleAppLink() {
+    async clickSampleAppLink(): Promise<void> {
         await this.sampleAppLink.click();
     }
 
     /**
      * Click on the "Text Input" link.
      */
-    async clickTextInputLink() {
+    async clickTextInputLink(): Promise<void> {
         await this.textInputLink.click();
     }
-    
+
     /**
      * Click on the "Progress Bar" link.
      */
-    async clickProgressBarLink() {
+    async clickProgressBarLink(): Promise<void> {
         await this.progressBarLink.click();
     }
 }

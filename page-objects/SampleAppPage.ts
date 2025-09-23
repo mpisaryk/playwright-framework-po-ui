@@ -16,6 +16,12 @@ export class SampleAppPage {
     constructor(page: Page) {
         this.page = page;
 
+        /**
+         * Locators are selected based on Playwright best practices, where possible:
+         * - Prefer user-facing attributes over implementation details (like classes or IDs)
+         * - Ensure that locators reflect user-visible behavior
+         */
+
         // Locate the header element by its role "heading" and visible text "Sample App"
         this.sampleAppPageHeader = page.getByRole('heading', { name: 'Sample App' });
 
@@ -36,7 +42,7 @@ export class SampleAppPage {
      * @param username - Username to login
      * @param password - Password to login
      */
-    async login(username: string, password: string) {
+    async login(username: string, password: string): Promise<void> {
         await this.userNameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.logInButton.click();

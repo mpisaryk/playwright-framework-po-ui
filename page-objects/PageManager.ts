@@ -43,56 +43,56 @@ export class PageManager {
     /**
      * Accessor for the HomePage object
      */
-    onHomePage() {
+    onHomePage(): HomePage {
         return this.homePage;
     }
 
     /**
      * Accessor for the OverlappedElementPage object
      */
-    onOverlappedElementPage() {
+    onOverlappedElementPage(): OverlappedElementPage {
         return this.overlappedElementPage;
     }
 
     /**
      * Accessor for the AjaxDataPage object
      */
-    onAjaxDataPage() {
+    onAjaxDataPage(): AjaxDataPage {
         return this.ajaxDataPage;
     }
 
     /**
      * Accessor for the VisibilityPage object
      */
-    onVisibilityPage() {
+    onVisibilityPage(): VisibilityPage {
         return this.visibilityPage;
     }
 
     /**
      * Accessor for the DynamicTablePage object
      */
-    onDynamicTablePage() {
+    onDynamicTablePage(): DynamicTablePage {
         return this.dynamicTablePage;
     }
 
     /**
      * Accessor for the SampleAppPage object
      */
-    onSampleAppPage() {
+    onSampleAppPage(): SampleAppPage {
         return this.sampleAppPage;
     }
 
     /**
      * Accessor for the TextInputPage object
      */
-    onTextInputPage() {
+    onTextInputPage(): TextInputPage {
         return this.textInputPage;
     }
 
     /**
      * Accessor for the ProgressBarPage object
      */
-    onProgressBarPage() {
+    onProgressBarPage(): ProgressBarPage {
         return this.progressBarPage;
     }
 }
