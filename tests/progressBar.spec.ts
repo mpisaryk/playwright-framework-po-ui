@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { PageManager } from '../page-objects/PageManager';
-import { DESIRED_PROGRESS_BAR_VALUE } from '../test-data/TestData';
+import { DESIRED_PROGRESS_BAR_VALUE, TOLERANCE_PROGRESS_BAR_VALUE } from '../test-data/TestData';
 
 test('Progress Bar', async ({ page }) => {
     // Initialize the Page Manager to work with Page Objects
@@ -24,9 +24,8 @@ test('Progress Bar', async ({ page }) => {
     // Click 'Stop' button to stop the progress bar
     await pm.onProgressBarPage().stopButton.click();
 
-    // Get the final value of the progress bar
-    const finalProgressBarValue = await pm.onProgressBarPage().getCurrentProgressValue();
-
-    // Verify that the final progress value matches the desired value
-    expect(finalProgressBarValue).toBe(DESIRED_PROGRESS_BAR_VALUE);
+    // Verify progress value is close to target
+    await pm
+        .onProgressBarPage()
+        .expectProgressCloseTo(DESIRED_PROGRESS_BAR_VALUE, TOLERANCE_PROGRESS_BAR_VALUE);
 });

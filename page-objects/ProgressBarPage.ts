@@ -1,4 +1,4 @@
-import { type Locator, type Page } from '@playwright/test';
+import { expect, type Locator, type Page } from '@playwright/test';
 
 /**
  * Page Object for the "Progress Bar" page.
@@ -54,5 +54,18 @@ export class ProgressBarPage {
     async getCurrentProgressValue(): Promise<number> {
         const value = await this.progressBar.getAttribute('aria-valuenow');
         return value ? Number(value) : 0;
+    }
+
+    /**
+     * Verify that the progress bar stopped close enough to the desired value.
+     * @param desiredValue number - the target value (e.g., 75)
+     * @param tolerance number - allowed difference
+     */
+    async expectProgressCloseTo(desiredValue: number, tolerance: number): Promise<void> {
+        // Get the current value of the progress bar
+        const finalValue: number = await this.getCurrentProgressValue();
+        // Verify that the absolute difference between the actual value and the desired target value
+        // does not exceed the allowed tolerance.
+        expect(Math.abs(finalValue - desiredValue)).toBeLessThanOrEqual(tolerance);
     }
 }
