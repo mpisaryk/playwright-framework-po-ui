@@ -6,7 +6,7 @@ test('Overlapped Element', async ({ page }) => {
     // Initialize the Page Manager to work with Page Objects
     const pm = new PageManager(page);
 
-    // Generate a unique name for Playground using Faker
+    // Generate a unique name for the Playground using Faker
     // faker.company.buzzNoun() generates a random buzz noun that can be used to demonstrate data being viewed by a manager.
     const playgroundName = faker.company.buzzNoun();
 

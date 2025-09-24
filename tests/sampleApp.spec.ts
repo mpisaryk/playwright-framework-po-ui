@@ -14,7 +14,7 @@ test('Sample App', async ({ page }) => {
     // Verify that the header of the "Sample App" page is visible
     await expect(pm.onSampleAppPage().sampleAppPageHeader).toBeVisible();
 
-    // Perform login using credentials from environment variables
+    // Perform login using credentials from the environment variables
     await pm
         .onSampleAppPage()
         .login(process.env.USER_NAME || 'defaultUser', process.env.PASSWORD || '123');
