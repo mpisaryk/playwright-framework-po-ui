@@ -14,12 +14,12 @@ export class TextInputPage {
         this.page = page;
 
         /**
-         * Locators are selected based on Playwright best practices, where possible:
+         * Locators are selected based on Playwright best practices (where possible):
          * - Prefer user-facing attributes over implementation details (like classes or IDs)
          * - Ensure that locators reflect user-visible behavior
          */
 
-        // Locate the header element by its role "heading" and visible text "Text Input"
+        // Locate the header by its role "heading" and visible text "Text Input"
         this.textInputPageHeader = page.getByRole('heading', { name: 'Text Input' });
 
         // Locate the input field for the button name using its placeholder text

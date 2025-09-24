@@ -14,12 +14,12 @@ export class AjaxDataPage {
         this.page = page;
 
         /**
-         * Locators are selected based on Playwright best practices, where possible:
+         * Locators are selected based on Playwright best practices (where possible):
          * - Prefer user-facing attributes over implementation details (like classes or IDs)
          * - Ensure that locators reflect user-visible behavior
          */
 
-        // Locate the header element by its role "heading" and visible text "AJAX Data"
+        // Locate the header by its role "heading" and visible text "AJAX Data"
         this.ajaxDataPageHeader = page.getByRole('heading', { name: 'AJAX Data' });
 
         // Locate the button that triggers the AJAX request by its role "button" and visible name "Button Triggering AJAX Request"

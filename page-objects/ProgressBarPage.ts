@@ -15,12 +15,12 @@ export class ProgressBarPage {
         this.page = page;
 
         /**
-         * Locators are selected based on Playwright best practices, where possible:
+         * Locators are selected based on Playwright best practices (where possible):
          * - Prefer user-facing attributes over implementation details (like classes or IDs)
          * - Ensure that locators reflect user-visible behavior
          */
 
-        // Locate the header element by its role "heading" and visible text "Progress Bar"
+        // Locate the header by its role "heading" and visible text "Progress Bar"
         this.progressBarPageHeader = page.getByRole('heading', { name: 'Progress Bar' });
 
         // Locate buttons by their role and visible names

@@ -1,7 +1,7 @@
 import { type Locator, type Page } from '@playwright/test';
 
 /**
- * Page Object for the "Overlapped Element" page.
+ * Page Object for the "Sample App" page.
  * This class encapsulates locators and actions for this page.
  */
 export class SampleAppPage {
@@ -17,12 +17,12 @@ export class SampleAppPage {
         this.page = page;
 
         /**
-         * Locators are selected based on Playwright best practices, where possible:
+         * Locators are selected based on Playwright best practices (where possible):
          * - Prefer user-facing attributes over implementation details (like classes or IDs)
          * - Ensure that locators reflect user-visible behavior
          */
 
-        // Locate the header element by its role "heading" and visible text "Sample App"
+        // Locate the header by its role "heading" and visible text "Sample App"
         this.sampleAppPageHeader = page.getByRole('heading', { name: 'Sample App' });
 
         // Locate Input fields by their placeholder text

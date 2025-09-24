@@ -13,17 +13,17 @@ export class OverlappedElementPage {
         this.page = page;
 
         /**
-         * Locators are selected based on Playwright best practices, where possible:
+         * Locators are selected based on Playwright best practices (where possible):
          * - Prefer user-facing attributes over implementation details (like classes or IDs)
          * - Ensure that locators reflect user-visible behavior
          */
 
-        // Locate the header element by its role "heading" and visible text "Overlapped Element"
+        // Locate the header by its role "heading" and visible text "Overlapped Element"
         this.overlappedElementPageHeader = page.getByRole('heading', {
             name: 'Overlapped Element',
         });
 
-        // Locate the input field by its placeholder attribute "Name"
+        // Locate the input field by its placeholder "Name"
         this.nameInputField = page.getByPlaceholder('Name');
     }
 

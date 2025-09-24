@@ -20,12 +20,12 @@ export class VisibilityPage {
         this.page = page;
 
         /**
-         * Locators are selected based on Playwright best practices, where possible:
+         * Locators are selected based on Playwright best practices (where possible):
          * - Prefer user-facing attributes over implementation details (like classes or IDs)
          * - Ensure that locators reflect user-visible behavior
          */
 
-        // Locate the header element by its role "heading" and visible text "Visibility"
+        // Locate the header by its role "heading" and visible text "Visibility"
         this.visibilityPageHeader = page.getByRole('heading', { name: 'Visibility' });
 
         // Locate the buttons by their role "button" and visible names

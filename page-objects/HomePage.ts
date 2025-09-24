@@ -18,30 +18,30 @@ export class HomePage {
         this.page = page;
 
         /**
-         * Locators are selected based on Playwright best practices, where possible:
+         * Locators are selected based on Playwright best practices (where possible):
          * - Prefer user-facing attributes over implementation details (like classes or IDs)
          * - Ensure that locators reflect user-visible behavior
          */
 
-        // Link to "Overlapped Element" page
+        // Link to the "Overlapped Element" page
         this.overlappedElementLink = page.getByRole('link', { name: 'Overlapped Element' });
 
-        // Link to "AJAX Data" page
+        // Link to the "AJAX Data" page
         this.ajaxDataLink = page.getByRole('link', { name: 'AJAX DATA' });
 
-        // Link to "Visibility" page
+        // Link to the "Visibility" page
         this.visibilityLink = page.getByRole('link', { name: 'Visibility' });
 
-        // Link to "Dynamic Table" page
+        // Link to the "Dynamic Table" page
         this.dynamicTableLink = page.getByRole('link', { name: 'Dynamic Table' });
 
-        // Link to "Sample App" page
+        // Link to the "Sample App" page
         this.sampleAppLink = page.getByRole('link', { name: 'Sample App' });
 
-        // Link to "Text Input" page
+        // Link to the "Text Input" page
         this.textInputLink = page.getByRole('link', { name: 'Text Input' });
 
-        // Link to "Progress Bar" page
+        // Link to the "Progress Bar" page
         this.progressBarLink = page.getByRole('link', { name: 'Progress Bar' });
     }
 
