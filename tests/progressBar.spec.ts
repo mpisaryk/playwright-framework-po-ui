@@ -3,29 +3,29 @@ import { PageManager } from '../page-objects/PageManager';
 import { DESIRED_PROGRESS_BAR_VALUE, TOLERANCE_PROGRESS_BAR_VALUE } from '../test-data/TestData';
 
 test('Progress Bar', async ({ page }) => {
-    // Initialize the Page Manager to work with Page Objects
-    const pm = new PageManager(page);
+  // Initialize the Page Manager to work with Page Objects
+  const pm = new PageManager(page);
 
-    // Navigate to the Home page
-    await pm.onHomePage().goToHomePage();
+  // Navigate to the Home page
+  await pm.onHomePage().goToHomePage();
 
-    // Click on the link to open the "Progress Bar" page
-    await pm.onHomePage().clickProgressBarLink();
+  // Click on the link to open the "Progress Bar" page
+  await pm.onHomePage().clickProgressBarLink();
 
-    // Verify that the header of the "Progress Bar" page is visible
-    await expect(pm.onProgressBarPage().progressBarPageHeader).toBeVisible();
+  // Verify that the header of the "Progress Bar" page is visible
+  await expect(pm.onProgressBarPage().progressBarPageHeader).toBeVisible();
 
-    // Click 'Start' button to start the progress bar
-    await pm.onProgressBarPage().startButton.click();
+  // Click 'Start' button to start the progress bar
+  await pm.onProgressBarPage().startButton.click();
 
-    // Wait until the progress bar reaches the desired value (75%)
-    await pm.onProgressBarPage().waitForProgressToReach(DESIRED_PROGRESS_BAR_VALUE);
+  // Wait until the progress bar reaches the desired value (75%)
+  await pm.onProgressBarPage().waitForProgressToReach(DESIRED_PROGRESS_BAR_VALUE);
 
-    // Click 'Stop' button to stop the progress bar
-    await pm.onProgressBarPage().stopButton.click();
+  // Click 'Stop' button to stop the progress bar
+  await pm.onProgressBarPage().stopButton.click();
 
-    // Verify progress value is close to target
-    await pm
-        .onProgressBarPage()
-        .expectProgressCloseTo(DESIRED_PROGRESS_BAR_VALUE, TOLERANCE_PROGRESS_BAR_VALUE);
+  // Verify progress value is close to target
+  await pm
+    .onProgressBarPage()
+    .expectProgressCloseTo(DESIRED_PROGRESS_BAR_VALUE, TOLERANCE_PROGRESS_BAR_VALUE);
 });
