@@ -7,6 +7,7 @@ import { DynamicTablePage } from './DynamicTable';
 import { SampleAppPage } from './SampleAppPage';
 import { TextInputPage } from './TextInputPage';
 import { ProgressBarPage } from './ProgressBarPage';
+import { ClassAttributePage } from './ClassAttributePage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -25,6 +26,7 @@ export class PageManager {
   private readonly sampleAppPage: SampleAppPage;
   private readonly textInputPage: TextInputPage;
   private readonly progressBarPage: ProgressBarPage;
+  private readonly classAttributePage: ClassAttributePage;
 
   constructor(page: Page) {
     this.page = page;
@@ -38,6 +40,7 @@ export class PageManager {
     this.sampleAppPage = new SampleAppPage(this.page);
     this.textInputPage = new TextInputPage(this.page);
     this.progressBarPage = new ProgressBarPage(this.page);
+    this.classAttributePage = new ClassAttributePage(this.page);
   }
 
   /**
@@ -94,5 +97,12 @@ export class PageManager {
    */
   onProgressBarPage(): ProgressBarPage {
     return this.progressBarPage;
+  }
+
+  /**
+   * Accessor for the ClassAttributePage object
+   */
+  onClassAttributePage(): ClassAttributePage {
+    return this.classAttributePage;
   }
 }

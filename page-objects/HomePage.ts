@@ -13,6 +13,7 @@ export class HomePage {
   readonly sampleAppLink: Locator;
   readonly textInputLink: Locator;
   readonly progressBarLink: Locator;
+  readonly classAttributeLink: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -43,6 +44,9 @@ export class HomePage {
 
     // Link to the "Progress Bar" page
     this.progressBarLink = page.getByRole('link', { name: 'Progress Bar' });
+
+    // Link to the "Class Attribute" page
+    this.classAttributeLink = page.getByRole('link', { name: 'Class Attribute' });
   }
 
   /**
@@ -99,5 +103,12 @@ export class HomePage {
    */
   async clickProgressBarLink(): Promise<void> {
     await this.progressBarLink.click();
+  }
+
+  /**
+   * Click on the "Class Attribute" link.
+   */
+  async clickClassAttributeLink(): Promise<void> {
+    await this.classAttributeLink.click();
   }
 }

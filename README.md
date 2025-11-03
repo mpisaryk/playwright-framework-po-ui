@@ -1,4 +1,4 @@
-# QA Technical Challenge – UI Test Automation Playground
+# Playwright UI Tests Examples
 
 This repository contains a **UI Test Automation solution** for the [UI Test Automation Playground](https://github.com/inflectra/ui-test-automation-playground) web application.
 
