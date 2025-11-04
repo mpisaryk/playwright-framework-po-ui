@@ -8,10 +8,10 @@ test('Hidden Layers', async ({ page }) => {
   // Navigate to the Home page
   await pm.onHomePage().goToHomePage();
 
-  // Click on the link to open the "Hidden Layers" page
+  // Click on the link to open the 'Hidden Layers' page
   await pm.onHomePage().clickHiddenLayersLink();
 
-  // Verify that the header of the "Hidden Layers" page is visible
+  // Verify that the header of the 'Hidden Layers' page is visible
   await expect(pm.onHiddenLayersPage().headerHiddenLayersPage).toBeVisible();
 
   // First click on the green button: should succeed as it is visible and clickable

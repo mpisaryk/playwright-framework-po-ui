@@ -1,7 +1,7 @@
 import { type Locator, type Page } from '@playwright/test';
 
 /**
- * Page Object for the "AJAX Data" page.
+ * Page Object for the 'AJAX Data' page.
  * This class encapsulates locators and actions for this page.
  */
 export class AjaxDataPage {
@@ -19,10 +19,10 @@ export class AjaxDataPage {
      * - Ensure that locators reflect user-visible behavior
      */
 
-    // Locate the header by its role "heading" and visible text "AJAX Data"
+    // Locate the header by its role "heading" and visible text 'AJAX Data'
     this.headerAjaxDataPage = page.getByRole('heading', { name: 'AJAX Data' });
 
-    // Locate the button that triggers the AJAX request by its role "button" and visible name "Button Triggering AJAX Request"
+    // Locate the button that triggers the AJAX request by its role "button" and visible name 'Button Triggering AJAX Request'
     this.buttonAjaxTrigger = page.getByRole('button', {
       name: 'Button Triggering AJAX Request',
     });

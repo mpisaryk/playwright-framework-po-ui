@@ -1,7 +1,7 @@
 import { type Locator, type Page } from '@playwright/test';
 
 /**
- * Page Object for the "Text Input" page.
+ * Page Object for the 'Text Input' page.
  * This class encapsulates locators and actions for this page.
  */
 export class TextInputPage {
@@ -19,7 +19,7 @@ export class TextInputPage {
      * - Ensure that locators reflect user-visible behavior
      */
 
-    // Locate the header by its role "heading" and visible text "Text Input"
+    // Locate the header by its role 'heading' and visible text 'Text Input'
     this.headerTextInputPage = page.getByRole('heading', { name: 'Text Input' });
 
     // Locate the input field for the button name using its placeholder text

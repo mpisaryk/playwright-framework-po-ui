@@ -9,10 +9,10 @@ test('Text Input', async ({ page }) => {
   // Navigate to the Home page
   await pm.onHomePage().goToHomePage();
 
-  // Click on the link to open the "Text Input" page
+  // Click on the link to open the 'Text Input' page
   await pm.onHomePage().clickTextInputLink();
 
-  // Verify that the header of the "Text Input" page is visible
+  // Verify that the header of the 'Text Input' page is visible
   await expect(pm.onTextInputPage().headerTextInputPage).toBeVisible();
 
   // Focus the input field for the button name

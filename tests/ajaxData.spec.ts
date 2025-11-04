@@ -8,10 +8,10 @@ test('AJAX Data', async ({ page }) => {
   // Navigate to the Home page
   await pm.onHomePage().goToHomePage();
 
-  // Click on the link to open the "AJAX Data" page
+  // Click on the link to open the 'AJAX Data' page
   await pm.onHomePage().clickAjaxDataLink();
 
-  // Verify that the header of the "AJAX Data" page is visible
+  // Verify that the header of the 'AJAX Data' page is visible
   await expect(pm.onAjaxDataPage().headerAjaxDataPage).toBeVisible();
 
   // Click the button to trigger the AJAX request

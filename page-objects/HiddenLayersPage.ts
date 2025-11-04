@@ -1,7 +1,7 @@
 import { type Locator, type Page } from '@playwright/test';
 
 /**
- * Page Object for the "Hidden Layers" page.
+ * Page Object for the 'Hidden Layers' page.
  * This class encapsulates locators and actions for this page.
  */
 export class HiddenLayersPage {
@@ -17,10 +17,10 @@ export class HiddenLayersPage {
      * - Ensure that locators reflect user-visible behavior
      */
 
-    // Locate the green button by its ID "greenButton"
+    // Locate the green button by its ID 'greenButton'
     this.buttonGreen = page.locator('#greenButton');
 
-    // Locate the page header by its role "heading" and visible text "Hidden Layers"
+    // Locate the page header by its role 'heading' and visible text 'Hidden Layers'
     this.headerHiddenLayersPage = page.getByRole('heading', { name: 'Hidden Layers' });
   }
 }

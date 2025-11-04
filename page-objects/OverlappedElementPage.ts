@@ -1,7 +1,7 @@
 import { type Locator, type Page } from '@playwright/test';
 
 /**
- * Page Object for the "Overlapped Element" page.
+ * Page Object for the 'Overlapped Element' page.
  * This class encapsulates locators and actions for this page.
  */
 export class OverlappedElementPage {
@@ -18,17 +18,17 @@ export class OverlappedElementPage {
      * - Ensure that locators reflect user-visible behavior
      */
 
-    // Locate the header by its role "heading" and visible text "Overlapped Element"
+    // Locate the header by its role 'heading' and visible text 'Overlapped Element'
     this.headerOverlappedElementPage = page.getByRole('heading', {
       name: 'Overlapped Element',
     });
 
-    // Locate the input field by its placeholder "Name"
-    this.nameInputField = page.getByPlaceholder('Name');
+    // Locate the input field by its placeholder 'Name'
+    this.inputName = page.getByPlaceholder('Name');
   }
 
   /**
-   * Scrolls the "Name" input field into the center of the viewport.
+   * Scrolls the 'Name' input field into the center of the viewport.
    * It uses a direct elementHandle and page.evaluate for reliable scrolling.
    */
   async scrollToNameInput(): Promise<void> {

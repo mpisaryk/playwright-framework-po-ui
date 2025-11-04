@@ -9,10 +9,10 @@ test('Progress Bar', async ({ page }) => {
   // Navigate to the Home page
   await pm.onHomePage().goToHomePage();
 
-  // Click on the link to open the "Progress Bar" page
+  // Click on the link to open the 'Progress Bar' page
   await pm.onHomePage().clickProgressBarLink();
 
-  // Verify that the header of the "Progress Bar" page is visible
+  // Verify that the header of the 'Progress Bar' page is visible
   await expect(pm.onProgressBarPage().headerProgressBarPage).toBeVisible();
 
   // Click 'Start' button to start the progress bar

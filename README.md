@@ -18,6 +18,8 @@ In this solution, the following scenarios have been automated:
 - Text Input  
 - Progress Bar  
 - Class Attribute
+- Hidden Layers
+- Load Delay
 
 All automated test cases are located in the `tests/` folder.
 

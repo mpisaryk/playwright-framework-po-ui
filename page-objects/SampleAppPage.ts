@@ -1,7 +1,7 @@
 import { type Locator, type Page } from '@playwright/test';
 
 /**
- * Page Object for the "Sample App" page.
+ * Page Object for the 'Sample App' page.
  * This class encapsulates locators and actions for this page.
  */
 export class SampleAppPage {
@@ -22,7 +22,7 @@ export class SampleAppPage {
      * - Ensure that locators reflect user-visible behavior
      */
 
-    // Locate the header by its role "heading" and visible text "Sample App"
+    // Locate the header by its role 'heading' and visible text 'Sample App'
     this.headerSampleAppPage = page.getByRole('heading', { name: 'Sample App' });
 
     // Locate Input fields by their placeholder text

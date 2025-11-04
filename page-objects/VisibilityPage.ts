@@ -1,7 +1,7 @@
 import { type Locator, type Page } from '@playwright/test';
 
 /**
- * Page Object for the "Visibility" page.
+ * Page Object for the 'Visibility' page.
  * This class encapsulates locators and actions for this page.
  */
 export class VisibilityPage {
@@ -25,7 +25,7 @@ export class VisibilityPage {
      * - Ensure that locators reflect user-visible behavior
      */
 
-    // Locate the header by its role "heading" and visible text "Visibility"
+    // Locate the header by its role 'heading' and visible text 'Visibility'
     this.headerVisibilityPage = page.getByRole('heading', { name: 'Visibility' });
 
     // Locate the buttons by their role "button" and visible names

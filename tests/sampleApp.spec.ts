@@ -8,10 +8,10 @@ test('Sample App', async ({ page }) => {
   // Navigate to the Home page
   await pm.onHomePage().goToHomePage();
 
-  // Click on the link to open the "Sample App" page
+  // Click on the link to open the 'Sample App' page
   await pm.onHomePage().clickSampleAppLink();
 
-  // Verify that the header of the "Sample App" page is visible
+  // Verify that the header of the 'Sample App' page is visible
   await expect(pm.onSampleAppPage().headerSampleAppPage).toBeVisible();
 
   // Perform login using credentials from the environment variables

@@ -1,7 +1,7 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
 /**
- * Page Object for the "Progress Bar" page.
+ * Page Object for the 'Progress Bar' page.
  * This class encapsulates locators and actions for this page.
  */
 export class ProgressBarPage {
@@ -20,7 +20,7 @@ export class ProgressBarPage {
      * - Ensure that locators reflect user-visible behavior
      */
 
-    // Locate the header by its role "heading" and visible text "Progress Bar"
+    // Locate the header by its role 'heading' and visible text 'Progress Bar'
     this.headerProgressBarPage = page.getByRole('heading', { name: 'Progress Bar' });
 
     // Locate buttons by their role and visible names
@@ -40,7 +40,7 @@ export class ProgressBarPage {
     const handle = await this.progressBar.elementHandle();
     if (!handle) throw new Error('Progress bar element not found');
 
-    // Wait for the progress bar's "aria-valuenow" attribute to reach the desired value
+    // Wait for the progress bar's 'aria-valuenow' attribute to reach the desired value
     await this.page.waitForFunction(
       ({ el, desiredValue }) => Number(el.getAttribute('aria-valuenow')) >= desiredValue,
       { el: handle, desiredValue: value }, // pass as a single object to satisfy TypeScript

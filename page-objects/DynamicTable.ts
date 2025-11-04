@@ -2,7 +2,7 @@ import { type Locator, type Page } from '@playwright/test';
 import { TASK_MANAGER_COLUMN } from '../test-data/TestData';
 
 /**
- * Page Object for the "Dynamic Table" page.
+ * Page Object for the 'Dynamic Table' page.
  * This class encapsulates locators and actions for this page.
  */
 export class DynamicTablePage {
@@ -20,7 +20,7 @@ export class DynamicTablePage {
      * - Ensure that locators reflect user-visible behavior
      */
 
-    // Locate the header by its role "heading" and visible text "Dynamic Table"
+    // Locate the header by its role 'heading' and visible text 'Dynamic Table'
     this.headerDynamicTablePage = page.getByRole('heading', { name: 'Dynamic Table' });
 
     // Locate all table column headers by their role
@@ -32,7 +32,7 @@ export class DynamicTablePage {
 
   /**
    * Get the index of a column by its header text
-   * @param columnName - Task manager column name (e.g., "CPU")
+   * @param columnName - Task manager column name (e.g., 'CPU')
    */
   async getColumnIndex(columnName: string): Promise<number> {
     return this.tableHeaders.evaluateAll((headers, columnName) => {
@@ -42,13 +42,13 @@ export class DynamicTablePage {
   }
 
   /**
-   * Get numeric CPU value for a given row (e.g., "Chrome").
+   * Get numeric CPU value for a given row (e.g., 'Chrome').
    *  1. Find the "CPU" column index
    *  2. Locate the row by its name (taskManagerNameValue)
    *  3. Extract the text of the cell in the CPU column
    *  4. Parse the number from the value
    *
-   * @param taskManagerNameValue - Name of the row (e.g., "Chrome")
+   * @param taskManagerNameValue - Name of the row (e.g., 'Chrome')
    * @returns CPU value as a number, or null if not found
    */
   async getCpuValueForRow(taskManagerNameValue: string): Promise<number | null> {

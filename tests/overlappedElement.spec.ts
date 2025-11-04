@@ -7,16 +7,16 @@ test('Overlapped Element', async ({ page }) => {
   const pm = new PageManager(page);
 
   // Generate a unique name for the Playground using Faker
-  // faker.company.buzzNoun() generates a random buzz noun that can be used to demonstrate data being viewed by a manager.
+  // faker.company.buzzNoun() generates a random buzz noun that can be used to demonstrate data being viewed by a manager
   const playgroundName = faker.company.buzzNoun();
 
   // Navigate to the Home page
   await pm.onHomePage().goToHomePage();
 
-  // Click on the link to open the "Overlapped Element" page
+  // Click on the link to open the 'Overlapped Element' page
   await pm.onHomePage().clickOverlappedElementLink();
 
-  // Verify that the header of the "Overlapped Element" page is visible
+  // Verify that the header of the 'Overlapped Element' page is visible
   await expect(pm.onOverlappedElementPage().headerOverlappedElementPage).toBeVisible();
 
   // Scroll the Name input field into view
