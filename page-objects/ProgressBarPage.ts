@@ -6,9 +6,9 @@ import { expect, type Locator, type Page } from '@playwright/test';
  */
 export class ProgressBarPage {
   readonly page: Page;
-  readonly progressBarPageHeader: Locator;
-  readonly startButton: Locator;
-  readonly stopButton: Locator;
+  readonly headerProgressBarPage: Locator;
+  readonly buttonStart: Locator;
+  readonly buttonStop: Locator;
   readonly progressBar: Locator;
 
   constructor(page: Page) {
@@ -21,11 +21,11 @@ export class ProgressBarPage {
      */
 
     // Locate the header by its role "heading" and visible text "Progress Bar"
-    this.progressBarPageHeader = page.getByRole('heading', { name: 'Progress Bar' });
+    this.headerProgressBarPage = page.getByRole('heading', { name: 'Progress Bar' });
 
     // Locate buttons by their role and visible names
-    this.startButton = page.getByRole('button', { name: 'Start' });
-    this.stopButton = page.getByRole('button', { name: 'Stop' });
+    this.buttonStart = page.getByRole('button', { name: 'Start' });
+    this.buttonStop = page.getByRole('button', { name: 'Stop' });
 
     // Locate the progress bar by its ID
     this.progressBar = page.locator('#progressBar');

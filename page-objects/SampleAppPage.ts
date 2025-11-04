@@ -6,11 +6,11 @@ import { type Locator, type Page } from '@playwright/test';
  */
 export class SampleAppPage {
   readonly page: Page;
-  readonly sampleAppPageHeader: Locator;
-  readonly userNameInput: Locator;
-  readonly passwordInput: Locator;
-  readonly logInButton: Locator;
-  readonly logOutButton: Locator;
+  readonly headerSampleAppPage: Locator;
+  readonly inputUserName: Locator;
+  readonly inputPassword: Locator;
+  readonly buttonLogIn: Locator;
+  readonly buttonLogOut: Locator;
   readonly loginStatus: Locator;
 
   constructor(page: Page) {
@@ -23,15 +23,15 @@ export class SampleAppPage {
      */
 
     // Locate the header by its role "heading" and visible text "Sample App"
-    this.sampleAppPageHeader = page.getByRole('heading', { name: 'Sample App' });
+    this.headerSampleAppPage = page.getByRole('heading', { name: 'Sample App' });
 
     // Locate Input fields by their placeholder text
-    this.userNameInput = page.getByPlaceholder('User Name');
-    this.passwordInput = page.getByPlaceholder('********');
+    this.inputUserName = page.getByPlaceholder('User Name');
+    this.inputPassword = page.getByPlaceholder('********');
 
     // Locate buttons by their role and visible names
-    this.logInButton = page.getByRole('button', { name: 'Log In' });
-    this.logOutButton = page.getByRole('button', { name: 'Log Out' });
+    this.buttonLogIn = page.getByRole('button', { name: 'Log In' });
+    this.buttonLogOut = page.getByRole('button', { name: 'Log Out' });
 
     // Locate the login status message by its ID
     this.loginStatus = page.locator('#loginstatus');
@@ -43,8 +43,8 @@ export class SampleAppPage {
    * @param password - Password to login
    */
   async login(username: string, password: string): Promise<void> {
-    await this.userNameInput.fill(username);
-    await this.passwordInput.fill(password);
-    await this.logInButton.click();
+    await this.inputUserName.fill(username);
+    await this.inputPassword.fill(password);
+    await this.buttonLogIn.click();
   }
 }

@@ -6,8 +6,8 @@ import { type Locator, type Page } from '@playwright/test';
  */
 export class OverlappedElementPage {
   readonly page: Page;
-  readonly overlappedElementPageHeader: Locator;
-  readonly nameInputField: Locator;
+  readonly headerOverlappedElementPage: Locator;
+  readonly inputName: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -19,7 +19,7 @@ export class OverlappedElementPage {
      */
 
     // Locate the header by its role "heading" and visible text "Overlapped Element"
-    this.overlappedElementPageHeader = page.getByRole('heading', {
+    this.headerOverlappedElementPage = page.getByRole('heading', {
       name: 'Overlapped Element',
     });
 
@@ -33,7 +33,7 @@ export class OverlappedElementPage {
    */
   async scrollToNameInput(): Promise<void> {
     // Get the ElementHandle from the Locator
-    const handle = await this.nameInputField.elementHandle();
+    const handle = await this.inputName.elementHandle();
     // Throw an error if the element is not found (safety check)
     if (!handle) {
       throw new Error('Element not found: nameInputField');

@@ -12,7 +12,7 @@ test('Sample App', async ({ page }) => {
   await pm.onHomePage().clickSampleAppLink();
 
   // Verify that the header of the "Sample App" page is visible
-  await expect(pm.onSampleAppPage().sampleAppPageHeader).toBeVisible();
+  await expect(pm.onSampleAppPage().headerSampleAppPage).toBeVisible();
 
   // Perform login using credentials from the environment variables
   await pm
@@ -25,5 +25,5 @@ test('Sample App', async ({ page }) => {
   );
 
   // Verify that the Log Out button is visible after login
-  await expect(pm.onSampleAppPage().logOutButton).toBeVisible();
+  await expect(pm.onSampleAppPage().buttonLogOut).toBeVisible();
 });

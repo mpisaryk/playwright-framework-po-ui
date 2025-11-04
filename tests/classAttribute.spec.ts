@@ -13,7 +13,7 @@ test('Class Attribute', async ({ page }) => {
   await pm.onHomePage().clickClassAttributeLink();
 
   // Verify that the header of the 'Class Attribute' page is visible
-  await expect(pm.onClassAttributePage().classAttributePageHeader).toBeVisible();
+  await expect(pm.onClassAttributePage().headerClassAttributePage).toBeVisible();
 
   /**
    * Click the primary button and accept any appearing dialog.

@@ -17,14 +17,14 @@ test('Overlapped Element', async ({ page }) => {
   await pm.onHomePage().clickOverlappedElementLink();
 
   // Verify that the header of the "Overlapped Element" page is visible
-  await expect(pm.onOverlappedElementPage().overlappedElementPageHeader).toBeVisible();
+  await expect(pm.onOverlappedElementPage().headerOverlappedElementPage).toBeVisible();
 
   // Scroll the Name input field into view
   await pm.onOverlappedElementPage().scrollToNameInput();
 
   // Fill the Name input field with the generated Playground name
-  await pm.onOverlappedElementPage().nameInputField.fill(playgroundName);
+  await pm.onOverlappedElementPage().inputName.fill(playgroundName);
 
   // Verify that the text was entered correctly
-  await expect(pm.onOverlappedElementPage().nameInputField).toHaveValue(playgroundName);
+  await expect(pm.onOverlappedElementPage().inputName).toHaveValue(playgroundName);
 });

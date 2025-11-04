@@ -6,14 +6,14 @@ import { type Locator, type Page } from '@playwright/test';
  */
 export class ClassAttributePage {
   readonly page: Page;
-  readonly classAttributePageHeader: Locator;
+  readonly headerClassAttributePage: Locator;
   readonly buttonPrimary: Locator;
 
   constructor(page: Page) {
     this.page = page;
 
     // Locate the header by its role "heading" and visible text "Class Attribute"
-    this.classAttributePageHeader = page.getByRole('heading', { name: 'Class Attribute' });
+    this.headerClassAttributePage = page.getByRole('heading', { name: 'Class Attribute' });
 
     /**
      * Locate the primary button using its class "btn-primary".

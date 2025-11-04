@@ -13,7 +13,7 @@ test('Dynamic Table', async ({ page }) => {
   await pm.onHomePage().clickDynamicTableLink();
 
   // Verify that the header of the 'Dynamic Table' page is visible
-  await expect(pm.onDynamicTablePage().dynamicTablePageHeader).toBeVisible();
+  await expect(pm.onDynamicTablePage().headerDynamicTablePage).toBeVisible();
 
   // Get CPU value for 'Chrome' row
   const chromeCpuValue = await pm.onDynamicTablePage().getCpuValueForRow(TASK_MANAGER_NAME_VALUE);

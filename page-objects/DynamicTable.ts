@@ -7,9 +7,9 @@ import { TASK_MANAGER_COLUMN } from '../test-data/TestData';
  */
 export class DynamicTablePage {
   readonly page: Page;
-  readonly dynamicTablePageHeader: Locator;
+  readonly headerDynamicTablePage: Locator;
   readonly tableHeaders: Locator;
-  readonly yellowLabel: Locator;
+  readonly labelYellow: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -21,13 +21,13 @@ export class DynamicTablePage {
      */
 
     // Locate the header by its role "heading" and visible text "Dynamic Table"
-    this.dynamicTablePageHeader = page.getByRole('heading', { name: 'Dynamic Table' });
+    this.headerDynamicTablePage = page.getByRole('heading', { name: 'Dynamic Table' });
 
     // Locate all table column headers by their role
     this.tableHeaders = page.locator('[role="columnheader"]');
 
     // Locate the yellow label
-    this.yellowLabel = page.locator('p.bg-warning');
+    this.labelYellow = page.locator('p.bg-warning');
   }
 
   /**
@@ -67,7 +67,7 @@ export class DynamicTablePage {
    * @returns CPU value as a number, or null if not found
    */
   async getYellowCpuValue(): Promise<number | null> {
-    const text = await this.yellowLabel.innerText();
+    const text = await this.labelYellow.innerText();
     const match = text.match(/(\d+(\.\d+)?)%/);
     return match ? parseFloat(match[1]) : null;
   }

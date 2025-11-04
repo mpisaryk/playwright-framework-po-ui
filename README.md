@@ -17,6 +17,7 @@ In this solution, the following scenarios have been automated:
 - Sample App  
 - Text Input  
 - Progress Bar  
+- Class Attribute
 
 All automated test cases are located in the `tests/` folder.
 

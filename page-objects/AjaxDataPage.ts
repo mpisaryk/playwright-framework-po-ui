@@ -6,9 +6,9 @@ import { type Locator, type Page } from '@playwright/test';
  */
 export class AjaxDataPage {
   readonly page: Page;
-  readonly ajaxDataPageHeader: Locator;
+  readonly headerAjaxDataPage: Locator;
   readonly buttonAjaxTrigger: Locator;
-  readonly successLabel: Locator;
+  readonly labelSuccess: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -20,7 +20,7 @@ export class AjaxDataPage {
      */
 
     // Locate the header by its role "heading" and visible text "AJAX Data"
-    this.ajaxDataPageHeader = page.getByRole('heading', { name: 'AJAX Data' });
+    this.headerAjaxDataPage = page.getByRole('heading', { name: 'AJAX Data' });
 
     // Locate the button that triggers the AJAX request by its role "button" and visible name "Button Triggering AJAX Request"
     this.buttonAjaxTrigger = page.getByRole('button', {
@@ -28,7 +28,7 @@ export class AjaxDataPage {
     });
 
     // Locate the label that appears after the AJAX request succeeds
-    this.successLabel = page
+    this.labelSuccess = page
       .locator('#content p')
       .filter({ hasText: 'Data loaded with AJAX get request.' });
   }

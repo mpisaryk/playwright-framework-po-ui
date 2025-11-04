@@ -12,14 +12,14 @@ test('AJAX Data', async ({ page }) => {
   await pm.onHomePage().clickAjaxDataLink();
 
   // Verify that the header of the "AJAX Data" page is visible
-  await expect(pm.onAjaxDataPage().ajaxDataPageHeader).toBeVisible();
+  await expect(pm.onAjaxDataPage().headerAjaxDataPage).toBeVisible();
 
   // Click the button to trigger the AJAX request
   await pm.onAjaxDataPage().buttonAjaxTrigger.click();
 
   // Wait for label text to appear
-  await expect(pm.onAjaxDataPage().successLabel).toBeVisible({ timeout: 16000 });
+  await expect(pm.onAjaxDataPage().labelSuccess).toBeVisible({ timeout: 16000 });
 
   // Click on text of the loaded label
-  await pm.onAjaxDataPage().successLabel.click();
+  await pm.onAjaxDataPage().labelSuccess.click();
 });

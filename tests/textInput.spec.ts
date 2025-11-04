@@ -13,10 +13,10 @@ test('Text Input', async ({ page }) => {
   await pm.onHomePage().clickTextInputLink();
 
   // Verify that the header of the "Text Input" page is visible
-  await expect(pm.onTextInputPage().textInputPageHeader).toBeVisible();
+  await expect(pm.onTextInputPage().headerTextInputPage).toBeVisible();
 
   // Focus the input field for the button name
-  await pm.onTextInputPage().buttonNameInput.click();
+  await pm.onTextInputPage().inputButtonName.click();
 
   // Type the new button name using the keyboard
   await page.keyboard.type(NEW_BUTTON_NAME);

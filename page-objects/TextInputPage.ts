@@ -6,8 +6,8 @@ import { type Locator, type Page } from '@playwright/test';
  */
 export class TextInputPage {
   readonly page: Page;
-  readonly textInputPageHeader: Locator;
-  readonly buttonNameInput: Locator;
+  readonly headerTextInputPage: Locator;
+  readonly inputButtonName: Locator;
   readonly buttonWithChangeableName: Locator;
 
   constructor(page: Page) {
@@ -20,10 +20,10 @@ export class TextInputPage {
      */
 
     // Locate the header by its role "heading" and visible text "Text Input"
-    this.textInputPageHeader = page.getByRole('heading', { name: 'Text Input' });
+    this.headerTextInputPage = page.getByRole('heading', { name: 'Text Input' });
 
     // Locate the input field for the button name using its placeholder text
-    this.buttonNameInput = page.getByPlaceholder('MyButton');
+    this.inputButtonName = page.getByPlaceholder('MyButton');
 
     // Locate the button with the changeable name using its ID
     this.buttonWithChangeableName = page.locator('#updatingButton');
