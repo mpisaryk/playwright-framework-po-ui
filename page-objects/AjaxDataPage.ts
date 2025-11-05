@@ -28,8 +28,8 @@ export class AjaxDataPage {
     });
 
     // Locate the label that appears after the AJAX request succeeds
-    this.labelSuccess = page
-      .locator('#content p')
-      .filter({ hasText: 'Data loaded with AJAX get request.' });
+    this.labelSuccess = page.locator('p.bg-success', {
+      hasText: 'Data loaded with AJAX get request.',
+    });
   }
 }

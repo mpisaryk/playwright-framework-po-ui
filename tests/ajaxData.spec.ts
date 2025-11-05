@@ -17,8 +17,16 @@ test('AJAX Data', async ({ page }) => {
   // Click the button to trigger the AJAX request
   await pm.onAjaxDataPage().buttonAjaxTrigger.click();
 
-  // Wait for label text to appear
-  await expect(pm.onAjaxDataPage().labelSuccess).toBeVisible({ timeout: 16000 });
+  // Wait for the 'Success' label to become stable
+  // elementHandle() is used to get a reference to the DOM element
+  // waitForElementState('stable') ensures the element is fully rendered and not in transition
+  // Throws an error if the element is not found, providing safety for the test
+  const elementHandle = await pm.onAjaxDataPage().labelSuccess.elementHandle();
+  if (elementHandle) {
+    await elementHandle.waitForElementState('stable');
+  } else {
+    throw new Error('Element Label Data Calculated not found');
+  }
 
   // Click on text of the loaded label
   await pm.onAjaxDataPage().labelSuccess.click();

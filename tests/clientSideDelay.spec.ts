@@ -17,7 +17,7 @@ test('Client Side Delay', async ({ page }) => {
   // Click the button that triggers client-side logic
   await pm.onClientSideDelayPage().buttonTriggerClientSideLogic.click();
 
-  // Wait for the "Data Calculated" label to become stable
+  // Wait for the 'Data Calculated' label to become stable
   // elementHandle() is used to get a reference to the DOM element
   // waitForElementState('stable') ensures the element is fully rendered and not in transition
   // Throws an error if the element is not found, providing safety for the test
