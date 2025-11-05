@@ -10,6 +10,7 @@ import { ProgressBarPage } from './ProgressBarPage';
 import { ClassAttributePage } from './ClassAttributePage';
 import { HiddenLayersPage } from './HiddenLayersPage';
 import { LoadDelayPage } from './LoadDelayPage';
+import { ClientSideDelay } from './ClientSideDelayPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -31,6 +32,7 @@ export class PageManager {
   private readonly classAttributePage: ClassAttributePage;
   private readonly hiddenLayersPage: HiddenLayersPage;
   private readonly loadDelayPage: LoadDelayPage;
+  private readonly clientSideDelayPage: ClientSideDelay;
 
   constructor(page: Page) {
     this.page = page;
@@ -47,6 +49,7 @@ export class PageManager {
     this.classAttributePage = new ClassAttributePage(this.page);
     this.hiddenLayersPage = new HiddenLayersPage(this.page);
     this.loadDelayPage = new LoadDelayPage(this.page);
+    this.clientSideDelayPage = new ClientSideDelay(this.page);
   }
 
   /**
@@ -124,5 +127,12 @@ export class PageManager {
    */
   onLoadDelayPage(): LoadDelayPage {
     return this.loadDelayPage;
+  }
+
+  /**
+   * Accessor for the ClientSideDelay object
+   */
+  onClientSideDelayPage(): ClientSideDelay {
+    return this.clientSideDelayPage;
   }
 }

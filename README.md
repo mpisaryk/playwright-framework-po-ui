@@ -20,6 +20,7 @@ In this solution, the following scenarios have been automated:
 - Class Attribute
 - Hidden Layers
 - Load Delay
+- Client Side Delay
 
 All automated test cases are located in the `tests/` folder.
 
