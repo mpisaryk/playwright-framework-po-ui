@@ -21,6 +21,8 @@ In this solution, the following scenarios have been automated:
 - Hidden Layers
 - Load Delay
 - Client Side Delay
+- Click
+- Scrollbars
 
 All automated test cases are located in the `tests/` folder.
 

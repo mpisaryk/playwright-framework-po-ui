@@ -18,6 +18,7 @@ export class HomePage {
   readonly linkLoadDelay: Locator;
   readonly linkClientSideDelay: Locator;
   readonly linkClick: Locator;
+  readonly linkScrollbars: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -63,6 +64,9 @@ export class HomePage {
 
     // Link to the 'Click' page
     this.linkClick = page.getByRole('link', { name: 'Click' });
+
+    // Link to the 'Scrollbars' page
+    this.linkScrollbars = page.getByRole('link', { name: 'Scrollbars' });
   }
 
   /**
@@ -154,5 +158,12 @@ export class HomePage {
    */
   async clickClickLink(): Promise<void> {
     await this.linkClick.click();
+  }
+
+  /**
+   * Click on the 'Scrollbars' link.
+   */
+  async clickScrollbarsLink(): Promise<void> {
+    await this.linkScrollbars.click();
   }
 }
