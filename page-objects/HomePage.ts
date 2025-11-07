@@ -17,6 +17,7 @@ export class HomePage {
   readonly linkHiddenLayers: Locator;
   readonly linkLoadDelay: Locator;
   readonly linkClientSideDelay: Locator;
+  readonly linkClick: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -59,6 +60,9 @@ export class HomePage {
 
     // Link to the 'Client Side Delay' page
     this.linkClientSideDelay = page.getByRole('link', { name: 'Client Side Delay' });
+
+    // Link to the 'Click' page
+    this.linkClick = page.getByRole('link', { name: 'Click' });
   }
 
   /**
@@ -143,5 +147,12 @@ export class HomePage {
    */
   async clickClientSideDelayLink(): Promise<void> {
     await this.linkClientSideDelay.click();
+  }
+
+  /**
+   * Click on the 'Click' link.
+   */
+  async clickClickLink(): Promise<void> {
+    await this.linkClick.click();
   }
 }

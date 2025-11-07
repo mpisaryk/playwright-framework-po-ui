@@ -11,6 +11,7 @@ import { ClassAttributePage } from './ClassAttributePage';
 import { HiddenLayersPage } from './HiddenLayersPage';
 import { LoadDelayPage } from './LoadDelayPage';
 import { ClientSideDelay } from './ClientSideDelayPage';
+import { ClickPage } from './ClickPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -33,6 +34,7 @@ export class PageManager {
   private readonly hiddenLayersPage: HiddenLayersPage;
   private readonly loadDelayPage: LoadDelayPage;
   private readonly clientSideDelayPage: ClientSideDelay;
+  private readonly clickPage: ClickPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -50,6 +52,7 @@ export class PageManager {
     this.hiddenLayersPage = new HiddenLayersPage(this.page);
     this.loadDelayPage = new LoadDelayPage(this.page);
     this.clientSideDelayPage = new ClientSideDelay(this.page);
+    this.clickPage = new ClickPage(this.page);
   }
 
   /**
@@ -134,5 +137,12 @@ export class PageManager {
    */
   onClientSideDelayPage(): ClientSideDelay {
     return this.clientSideDelayPage;
+  }
+
+  /**
+   * Accessor for the ClickPage object
+   */
+  onClickPage(): ClickPage {
+    return this.clickPage;
   }
 }

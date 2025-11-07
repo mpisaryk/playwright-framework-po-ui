@@ -4,3 +4,4 @@ export const NEW_BUTTON_NAME = 'Test Button';
 export const DESIRED_PROGRESS_BAR_VALUE = 75;
 export const TOLERANCE_PROGRESS_BAR_VALUE = 1;
 export const DIALOG_MESSAGE = 'Primary button pressed';
+export const EXPECTED_BUTTON_COLOR = 'rgb(33, 136, 56)';
