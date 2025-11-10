@@ -23,6 +23,7 @@ In this solution, the following scenarios have been automated:
 - Client Side Delay
 - Click
 - Scrollbars
+- Verify Text
 
 All automated test cases are located in the `tests/` folder.
 

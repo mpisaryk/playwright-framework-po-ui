@@ -13,6 +13,7 @@ import { LoadDelayPage } from './LoadDelayPage';
 import { ClientSideDelay } from './ClientSideDelayPage';
 import { ClickPage } from './ClickPage';
 import { ScrollbarsPage } from './ScrollbarsPage';
+import { VerifyTextPage } from './VerifyTextPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -37,6 +38,7 @@ export class PageManager {
   private readonly clientSideDelayPage: ClientSideDelay;
   private readonly clickPage: ClickPage;
   private readonly scrollbarsPage: ScrollbarsPage;
+  private readonly verifyTextPage: VerifyTextPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -56,6 +58,7 @@ export class PageManager {
     this.clientSideDelayPage = new ClientSideDelay(this.page);
     this.clickPage = new ClickPage(this.page);
     this.scrollbarsPage = new ScrollbarsPage(this.page);
+    this.verifyTextPage = new VerifyTextPage(this.page);
   }
 
   /**
@@ -154,5 +157,12 @@ export class PageManager {
    */
   onScrollbarsPage(): ScrollbarsPage {
     return this.scrollbarsPage;
+  }
+
+  /**
+   * Accessor for the Verify Text object
+   */
+  onVerifyTextPage(): VerifyTextPage {
+    return this.verifyTextPage;
   }
 }
