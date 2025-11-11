@@ -24,6 +24,7 @@ In this solution, the following scenarios have been automated:
 - Click
 - Scrollbars
 - Verify Text
+- Mouse Over
 
 All automated test cases are located in the `tests/` folder.
 

@@ -20,6 +20,7 @@ export class HomePage {
   readonly linkClick: Locator;
   readonly linkScrollbars: Locator;
   readonly linkVerifyText: Locator;
+  readonly linkMouseOver: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -71,6 +72,9 @@ export class HomePage {
 
     // Link to the 'Verify Text' page
     this.linkVerifyText = page.getByRole('link', { name: 'Verify Text' });
+
+    // Link to the 'Mouse Over' page
+    this.linkMouseOver = page.getByRole('link', { name: 'Mouse Over' });
   }
 
   /**
@@ -176,5 +180,12 @@ export class HomePage {
    */
   async clickVerifyTextLink(): Promise<void> {
     await this.linkVerifyText.click();
+  }
+
+  /**
+   * Click on the 'Mouse Over' link.
+   */
+  async clickMouseOverLink(): Promise<void> {
+    await this.linkMouseOver.click();
   }
 }
