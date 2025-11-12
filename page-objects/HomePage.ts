@@ -21,6 +21,7 @@ export class HomePage {
   readonly linkScrollbars: Locator;
   readonly linkVerifyText: Locator;
   readonly linkMouseOver: Locator;
+  readonly linkShadowDom: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -75,6 +76,9 @@ export class HomePage {
 
     // Link to the 'Mouse Over' page
     this.linkMouseOver = page.getByRole('link', { name: 'Mouse Over' });
+
+    // Link to the 'Non-Breaking Space' page
+    this.linkShadowDom = page.getByRole('link', { name: 'Shadow DOM' });
   }
 
   /**
@@ -187,5 +191,12 @@ export class HomePage {
    */
   async clickMouseOverLink(): Promise<void> {
     await this.linkMouseOver.click();
+  }
+
+  /**
+   * Click on the 'Shadow DOM' link.
+   */
+  async clickShadowDomLink(): Promise<void> {
+    await this.linkShadowDom.click();
   }
 }

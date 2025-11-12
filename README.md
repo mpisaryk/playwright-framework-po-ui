@@ -25,6 +25,7 @@ In this solution, the following scenarios have been automated:
 - Scrollbars
 - Verify Text
 - Mouse Over
+- Shadow DOM
 
 All automated test cases are located in the `tests/` folder.
 
