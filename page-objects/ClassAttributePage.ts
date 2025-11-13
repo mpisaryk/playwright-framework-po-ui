@@ -24,24 +24,4 @@ export class ClassAttributePage {
       '//button[contains(concat(" ", normalize-space(@class), " "), " btn-primary ")]',
     );
   }
-
-  /**
-   * Clicks the primary button and automatically accepts any appearing dialog.
-   * The dialog message is captured and returned for verification.
-   *
-   * Steps:
-   * 1. Listen for a dialog event and capture its message.
-   * 2. Accept the dialog to avoid blocking further actions.
-   * 3. Click the primary button.
-   * 4. Return the dialog message.
-   */
-  async clickPrimaryButtonAndAcceptDialog(): Promise<string> {
-    let dialogMessage = '';
-    this.page.on('dialog', async (dialog) => {
-      dialogMessage = dialog.message();
-      await dialog.accept();
-    });
-    await this.buttonPrimary.click();
-    return dialogMessage;
-  }
 }

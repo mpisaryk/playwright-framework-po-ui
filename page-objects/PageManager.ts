@@ -16,6 +16,7 @@ import { ScrollbarsPage } from './ScrollbarsPage';
 import { VerifyTextPage } from './VerifyTextPage';
 import { MouseOverPage } from './MouseOverPage';
 import { ShadowDomPage } from './ShadowDom';
+import { AlertsPage } from './AlertsPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -43,6 +44,7 @@ export class PageManager {
   private readonly verifyTextPage: VerifyTextPage;
   private readonly mouseOverPage: MouseOverPage;
   private readonly shadowDomPage: ShadowDomPage;
+  private readonly alertsPage: AlertsPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -65,6 +67,7 @@ export class PageManager {
     this.verifyTextPage = new VerifyTextPage(this.page);
     this.mouseOverPage = new MouseOverPage(this.page);
     this.shadowDomPage = new ShadowDomPage(this.page);
+    this.alertsPage = new AlertsPage(this.page);
   }
 
   /**
@@ -184,5 +187,12 @@ export class PageManager {
    */
   onShadowDomPage(): ShadowDomPage {
     return this.shadowDomPage;
+  }
+
+  /**
+   * Accessor for the Non-Breaking Space object
+   */
+  onAlertsPage(): AlertsPage {
+    return this.alertsPage;
   }
 }

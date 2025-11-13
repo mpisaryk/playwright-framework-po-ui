@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { PageManager } from '../page-objects/PageManager';
 import { DIALOG_MESSAGE } from '../test-data/TestData';
+import { handleDialog } from '../utils/dialog-handler';
 
 test('Class Attribute', async ({ page }) => {
   // Initialize the Page Manager to work with Page Objects
@@ -15,8 +16,11 @@ test('Class Attribute', async ({ page }) => {
   // Verify that the header of the 'Class Attribute' page is visible
   await expect(pm.onClassAttributePage().headerClassAttributePage).toBeVisible();
 
-  //Click the primary button and accept any appearing dialog.
-  const dialogMessage = await pm.onClassAttributePage().clickPrimaryButtonAndAcceptDialog();
+  //Click the primary button and accept any appearing dialog
+  const [dialogMessage] = await Promise.all([
+    handleDialog(page, 'accept'),
+    pm.onClassAttributePage().buttonPrimary.click(),
+  ]);
 
   // Verify the dialog message
   expect(dialogMessage).toBe(DIALOG_MESSAGE);

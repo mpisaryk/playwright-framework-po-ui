@@ -22,6 +22,7 @@ export class HomePage {
   readonly linkVerifyText: Locator;
   readonly linkMouseOver: Locator;
   readonly linkShadowDom: Locator;
+  readonly linkAlers: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -79,6 +80,9 @@ export class HomePage {
 
     // Link to the 'Non-Breaking Space' page
     this.linkShadowDom = page.getByRole('link', { name: 'Shadow DOM' });
+
+    // Link to the 'Alerts' page
+    this.linkAlers = page.getByRole('link', { name: 'Alerts' });
   }
 
   /**
@@ -198,5 +202,12 @@ export class HomePage {
    */
   async clickShadowDomLink(): Promise<void> {
     await this.linkShadowDom.click();
+  }
+
+  /**
+   * Click on the 'Alerts' link.
+   */
+  async clickAlertsLink(): Promise<void> {
+    await this.linkAlers.click();
   }
 }
