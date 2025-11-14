@@ -27,6 +27,7 @@ In this solution, the following scenarios have been automated:
 - Mouse Over
 - Shadow DOM
 - Alerts
+- File Upload
 
 All automated test cases are located in the `tests/` folder.
 
@@ -35,10 +36,11 @@ All automated test cases are located in the `tests/` folder.
 ## Project Structure  
 ```text
 project-root/
-├── tests/                # All test cases
+├── tests/                # Tests folder
 ├── page-objects/         # Page Object Models
 ├── env/                  # .env.dev, .env.prod
-├── test-data/            # Test variables used in automated tests
+├── test-data/            # Test data used in automated tests
+├── utils/                # Core utilities
 ├── playwright.config.ts  # Playwright configuration
 ├── package.json          # Scripts and dependencies
 ├── package-lock.json

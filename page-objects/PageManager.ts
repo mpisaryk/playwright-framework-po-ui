@@ -17,6 +17,7 @@ import { VerifyTextPage } from './VerifyTextPage';
 import { MouseOverPage } from './MouseOverPage';
 import { ShadowDomPage } from './ShadowDom';
 import { AlertsPage } from './AlertsPage';
+import { FileUploadPage } from './FileUploadPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -45,6 +46,7 @@ export class PageManager {
   private readonly mouseOverPage: MouseOverPage;
   private readonly shadowDomPage: ShadowDomPage;
   private readonly alertsPage: AlertsPage;
+  private readonly fileUploadPage: FileUploadPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -68,6 +70,7 @@ export class PageManager {
     this.mouseOverPage = new MouseOverPage(this.page);
     this.shadowDomPage = new ShadowDomPage(this.page);
     this.alertsPage = new AlertsPage(this.page);
+    this.fileUploadPage = new FileUploadPage(this.page);
   }
 
   /**
@@ -194,5 +197,12 @@ export class PageManager {
    */
   onAlertsPage(): AlertsPage {
     return this.alertsPage;
+  }
+
+  /**
+   * Accessor for the File Upload object
+   */
+  onFileUploadPage(): FileUploadPage {
+    return this.fileUploadPage;
   }
 }

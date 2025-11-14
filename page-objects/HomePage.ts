@@ -23,6 +23,7 @@ export class HomePage {
   readonly linkMouseOver: Locator;
   readonly linkShadowDom: Locator;
   readonly linkAlers: Locator;
+  readonly linkFileUpload: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -83,6 +84,9 @@ export class HomePage {
 
     // Link to the 'Alerts' page
     this.linkAlers = page.getByRole('link', { name: 'Alerts' });
+
+    // Link to the 'File Upload' page
+    this.linkFileUpload = page.getByRole('link', { name: 'File Upload' });
   }
 
   /**
@@ -209,5 +213,12 @@ export class HomePage {
    */
   async clickAlertsLink(): Promise<void> {
     await this.linkAlers.click();
+  }
+
+  /**
+   * Click on the 'File Upload' link.
+   */
+  async clickFileUploadLink(): Promise<void> {
+    await this.linkFileUpload.click();
   }
 }

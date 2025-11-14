@@ -7,3 +7,5 @@ export const DIALOG_MESSAGE = 'Primary button pressed';
 export const EXPECTED_BUTTON_COLOR = 'rgb(33, 136, 56)';
 export const EXPECTED_LABEL_TEXT = 'Welcome UserName!';
 export const EXPECTED_CLICK_COUNT = 2;
+export const EXPECTED_FILE_NAME = 'UploadTextFile.txt';
+export const EXPECTED_FILE_UPLOAD_SUCCESS_MESSAGE = '1 file(s) selected';
