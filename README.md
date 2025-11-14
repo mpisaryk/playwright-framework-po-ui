@@ -11,7 +11,8 @@ The solution is implemented using **TypeScript + Playwright**.
 In this solution, the following scenarios have been automated:
 
 - Overlapped Element  
-- AJAX Data  
+- AJAX Data 
+- Animated Button 
 - Visibility  
 - Dynamic Table  
 - Sample App  

@@ -18,6 +18,7 @@ import { MouseOverPage } from './MouseOverPage';
 import { ShadowDomPage } from './ShadowDom';
 import { AlertsPage } from './AlertsPage';
 import { FileUploadPage } from './FileUploadPage';
+import { AnimatedButtonPage } from './AnimatedButtonPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -47,6 +48,7 @@ export class PageManager {
   private readonly shadowDomPage: ShadowDomPage;
   private readonly alertsPage: AlertsPage;
   private readonly fileUploadPage: FileUploadPage;
+  private readonly animatedButtonPage: AnimatedButtonPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -71,6 +73,7 @@ export class PageManager {
     this.shadowDomPage = new ShadowDomPage(this.page);
     this.alertsPage = new AlertsPage(this.page);
     this.fileUploadPage = new FileUploadPage(this.page);
+    this.animatedButtonPage = new AnimatedButtonPage(this.page);
   }
 
   /**
@@ -204,5 +207,12 @@ export class PageManager {
    */
   onFileUploadPage(): FileUploadPage {
     return this.fileUploadPage;
+  }
+
+  /**
+   * Accessor for the Animated Buton object
+   */
+  onAnimatedButtonPage(): AnimatedButtonPage {
+    return this.animatedButtonPage;
   }
 }

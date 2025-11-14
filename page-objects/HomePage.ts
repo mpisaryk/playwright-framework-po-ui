@@ -24,6 +24,7 @@ export class HomePage {
   readonly linkShadowDom: Locator;
   readonly linkAlers: Locator;
   readonly linkFileUpload: Locator;
+  readonly linkAnimatedButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -87,6 +88,9 @@ export class HomePage {
 
     // Link to the 'File Upload' page
     this.linkFileUpload = page.getByRole('link', { name: 'File Upload' });
+
+    // Link to the 'Animated Button' page
+    this.linkAnimatedButton = page.getByRole('link', { name: 'Animated Button' });
   }
 
   /**
@@ -220,5 +224,12 @@ export class HomePage {
    */
   async clickFileUploadLink(): Promise<void> {
     await this.linkFileUpload.click();
+  }
+
+  /**
+   * Click on the 'Animated Button' link.
+   */
+  async clickAnimatedButtonLink(): Promise<void> {
+    await this.linkAnimatedButton.click();
   }
 }
