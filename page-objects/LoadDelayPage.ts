@@ -26,4 +26,11 @@ export class LoadDelayPage {
       name: 'Button Appearing After Delay',
     });
   }
+
+  /**
+   * Waits for the delayed button to appear and triggers its action.
+   */
+  async triggerDelayedButton(): Promise<void> {
+    await this.buttonAppearingAfterDelay.click();
+  }
 }

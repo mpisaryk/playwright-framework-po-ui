@@ -15,12 +15,8 @@ test('Hidden Layers', async ({ page }) => {
   await expect(pm.onHiddenLayersPage().headerHiddenLayersPage).toBeVisible();
 
   // First click on the green button: should succeed as it is visible and clickable
-  await pm.onHiddenLayersPage().buttonGreen.click();
+  await pm.onHiddenLayersPage().clickGreenButton();
 
   // Second click on the green button: the button is now covered by another element
-  // Use expect(...).rejects.toThrow() to assert that the click fails as expected
-  // timeout: 1000 ensures the test fails fast if the click is blocked
-  await expect(async () => {
-    await pm.onHiddenLayersPage().buttonGreen.click({ timeout: 1000 });
-  }).rejects.toThrow();
+  await pm.onHiddenLayersPage().expectGreenButtonClickToFail();
 });

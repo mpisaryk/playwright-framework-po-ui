@@ -24,4 +24,11 @@ export class ClassAttributePage {
       '//button[contains(concat(" ", normalize-space(@class), " "), " btn-primary ")]',
     );
   }
+
+  /**
+   * Clicks the Primary button.
+   */
+  async clickPrimaryButton(): Promise<void> {
+    await this.buttonPrimary.click();
+  }
 }

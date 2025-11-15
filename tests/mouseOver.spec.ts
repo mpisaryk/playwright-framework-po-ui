@@ -15,34 +15,17 @@ test('Mouse Over', async ({ page }) => {
   // Verify that the header of the 'Mouse Over' page is visible
   await expect(pm.onMouseOverPage().headerMouseOver).toBeVisible();
 
-  /**
-   * Interact with the "Click Me" link:
-   * - Hover over it
-   * - Hover, click, move away, hover again, and click again
-   * - Verify that the click counter matches the expected value
-   */
-  await pm.onMouseOverPage().linkClickMe.hover();
-  await pm.onMouseOverPage().linkClickMe.click();
-  await page.mouse.move(0, 0);
-  await pm.onMouseOverPage().linkClickMe.hover();
-  await pm.onMouseOverPage().linkClickMe.click();
-  const numberOfCliksForClickMeLink = await pm
-    .onMouseOverPage()
-    .numberContent(pm.onMouseOverPage().counterClickMe);
-  expect(numberOfCliksForClickMeLink).toEqual(EXPECTED_CLICK_COUNT);
+  // Perform the action sequence on the 'Click Me' link: hover, click, move away, hover again, and click again
+  // The method returns the current click count recorded by the counter
+  const clicksClickMe = await pm.onMouseOverPage().interactWithClickMeLink();
 
-  /**
-   * Interact with the "Button" link in the same way:
-   * - Hover, click, move away, hover again, and click again
-   * - Verify that the click counter matches the expected value
-   */
-  await pm.onMouseOverPage().linkButton.hover();
-  await pm.onMouseOverPage().linkButton.click();
-  await page.mouse.move(0, 0);
-  await pm.onMouseOverPage().linkButton.hover();
-  await pm.onMouseOverPage().linkButton.click();
-  const numberOfCliksForLinkButton = await pm
-    .onMouseOverPage()
-    .numberContent(pm.onMouseOverPage().counterButton);
-  expect(numberOfCliksForLinkButton).toEqual(EXPECTED_CLICK_COUNT);
+  // Verify that the number of clicks on the 'Click Me' link matches the expected value
+  expect(clicksClickMe).toEqual(EXPECTED_CLICK_COUNT);
+
+  // Perform the same action sequence on the 'Button' link: hover, click, move away, hover again, and click again
+  // The method returns the current click count for this button
+  const clicksButton = await pm.onMouseOverPage().interactWithLinkButton();
+
+  // Verify that the number of clicks on the 'Button' link matches the expected value
+  expect(clicksButton).toEqual(EXPECTED_CLICK_COUNT);
 });

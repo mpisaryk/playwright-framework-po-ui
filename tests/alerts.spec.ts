@@ -20,17 +20,14 @@ test('Alerts', async ({ page }) => {
   await expect(pm.onAlertsPage().headerAlertsPage).toBeVisible();
 
   // Handle a simple alert dialog
-  await Promise.all([handleDialog(page, 'accept'), pm.onAlertsPage().buttonAlert.click()]);
+  await Promise.all([handleDialog(page, 'accept'), pm.onAlertsPage().openAlert()]);
 
   // Handle confirm dialogs
-  await Promise.all([handleDialog(page, 'accept'), pm.onAlertsPage().buttonConfirm.click()]);
+  await Promise.all([handleDialog(page, 'accept'), pm.onAlertsPage().openConfirm()]);
   await handleDialog(page, 'accept');
 
   // Handle a prompt dialog and pass the random animal as user input
-  await Promise.all([
-    handleDialog(page, 'accept', randomAnimal),
-    pm.onAlertsPage().buttonPrompt.click(),
-  ]);
+  await Promise.all([handleDialog(page, 'accept', randomAnimal), pm.onAlertsPage().openPrompt()]);
 
   // Verify that the prompt dialog displays the expected text with the entered prompt value
   const dialogUserValue = await handleDialog(page, 'accept');

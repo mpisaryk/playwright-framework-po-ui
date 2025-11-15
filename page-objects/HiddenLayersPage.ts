@@ -1,4 +1,4 @@
-import { type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page, expect } from '@playwright/test';
 
 /**
  * Page Object for the 'Hidden Layers' page.
@@ -22,5 +22,22 @@ export class HiddenLayersPage {
 
     // Locate the page header by its role 'heading' and visible text 'Hidden Layers'
     this.headerHiddenLayersPage = page.getByRole('heading', { name: 'Hidden Layers' });
+  }
+
+  /**
+   * Clicks the green button.
+   */
+  async clickGreenButton(): Promise<void> {
+    await this.buttonGreen.click();
+  }
+
+  /**
+   * Attempts to click the green button and expects the click to fail,
+   * e.g., when the button is covered by another element.
+   */
+  async expectGreenButtonClickToFail(): Promise<void> {
+    await expect(async () => {
+      await this.buttonGreen.click({ timeout: 1000 });
+    }).rejects.toThrow();
   }
 }

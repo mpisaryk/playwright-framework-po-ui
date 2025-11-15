@@ -17,5 +17,5 @@ test('Load Delay', async ({ page }) => {
   await expect(pm.onLoadDelayPage().headerLoadDelayPage).toBeVisible();
 
   // Click the button that appears after the loading delay.
-  await pm.onLoadDelayPage().buttonAppearingAfterDelay.click();
+  await pm.onLoadDelayPage().triggerDelayedButton();
 });

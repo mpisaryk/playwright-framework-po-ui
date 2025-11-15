@@ -28,4 +28,25 @@ export class AlertsPage {
     this.buttonConfirm = page.getByRole('button', { name: 'Confirm' });
     this.buttonPrompt = page.getByRole('button', { name: 'Prompt' });
   }
+
+  /**
+   * Opens the alert dialog.
+   */
+  async openAlert(): Promise<void> {
+    await this.buttonAlert.click();
+  }
+
+  /**
+   * Opens the confirm dialog.
+   */
+  async openConfirm(): Promise<void> {
+    await this.buttonConfirm.click();
+  }
+
+  /**
+   * Opens the prompt dialog.
+   */
+  async openPrompt(): Promise<void> {
+    await this.buttonPrompt.click();
+  }
 }

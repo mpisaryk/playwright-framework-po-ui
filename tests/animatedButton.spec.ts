@@ -15,14 +15,14 @@ test('Animated Button', async ({ page }) => {
   await expect(pm.onAnimatedButtonPage().headerAnimatedButtonPage).toBeVisible();
 
   // Start the button animation
-  await pm.onAnimatedButtonPage().startAnimation();
+  await pm.onAnimatedButtonPage().triggerAnimationStart();
 
   // Wait until the animation is finished
   await pm.onAnimatedButtonPage().waitForAnimationDone();
 
   // Click the moving target button once the animation is complete
-  await pm.onAnimatedButtonPage().clickbuttonMovingTarget();
+  await pm.onAnimatedButtonPage().clickButtonMovingTarget();
 
   // Verify that the button is no longer in a spinning state by checking its CSS class
-  expect(await pm.onAnimatedButtonPage().getbuttonMovingTargetClass()).not.toContain('spin');
+  expect(await pm.onAnimatedButtonPage().getButtonMovingTargetClass()).not.toContain('spin');
 });

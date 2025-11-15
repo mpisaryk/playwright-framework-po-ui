@@ -15,16 +15,8 @@ test('Client Side Delay', async ({ page }) => {
   await expect(pm.onClientSideDelayPage().headerClientSideDelayPage).toBeVisible();
 
   // Click the button that triggers client-side logic
-  await pm.onClientSideDelayPage().buttonTriggerClientSideLogic.click();
+  await pm.onClientSideDelayPage().triggerClientSideLogic();
 
   // Wait for the 'Data Calculated' label to become stable
-  // elementHandle() is used to get a reference to the DOM element
-  // waitForElementState('stable') ensures the element is fully rendered and not in transition
-  // Throws an error if the element is not found, providing safety for the test
-  const elementHandle = await pm.onClientSideDelayPage().labelDataCalculated.elementHandle();
-  if (elementHandle) {
-    await elementHandle.waitForElementState('stable');
-  } else {
-    throw new Error('Element Label Data Calculated not found');
-  }
+  await pm.onClientSideDelayPage().waitForDataCalculatedStable();
 });

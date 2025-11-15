@@ -19,7 +19,7 @@ test('Class Attribute', async ({ page }) => {
   //Click the primary button and accept any appearing dialog
   const [dialogMessage] = await Promise.all([
     handleDialog(page, 'accept'),
-    pm.onClassAttributePage().buttonPrimary.click(),
+    pm.onClassAttributePage().clickPrimaryButton(),
   ]);
 
   // Verify the dialog message

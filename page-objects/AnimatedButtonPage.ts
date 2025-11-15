@@ -31,10 +31,10 @@ export class AnimatedButtonPage {
     this.labelAnimationDone = page.locator('#opstatus', { hasText: 'Animation done' });
   }
 
-  /**
-   * Clicks the "Start Animation" button to begin the animation.
-   */
-  async startAnimation(): Promise<void> {
+ /**
+ * Initiates the animation process.
+ */
+  async triggerAnimationStart(): Promise<void> {
     await this.buttonStartAnimation.click();
   }
 
@@ -48,7 +48,7 @@ export class AnimatedButtonPage {
   /**
    * Clicks the "Moving Target" button.
    */
-  async clickbuttonMovingTarget(): Promise<void> {
+  async clickButtonMovingTarget(): Promise<void> {
     await this.buttonMovingTarget.click();
   }
 
@@ -56,7 +56,7 @@ export class AnimatedButtonPage {
    * Retrieves the current CSS class of the "Moving Target" button.
    * @returns The value of the 'class' attribute or null if not present
    */
-  async getbuttonMovingTargetClass(): Promise<string | null> {
+  async getButtonMovingTargetClass(): Promise<string | null> {
     return await this.buttonMovingTarget.getAttribute('class');
   }
 }

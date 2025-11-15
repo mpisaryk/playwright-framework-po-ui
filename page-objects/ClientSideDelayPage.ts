@@ -32,4 +32,23 @@ export class ClientSideDelay {
       hasText: 'Data calculated on the client side.',
     });
   }
+
+  /**
+   * Clicks the button that triggers the client-side logic.
+   */
+  async triggerClientSideLogic(): Promise<void> {
+    await this.buttonTriggerClientSideLogic.click();
+  }
+  
+  /**
+   * Waits for the "Data calculated" label to become stable.
+   * Ensures the element is fully rendered and not in transition.
+   */
+  async waitForDataCalculatedStable(): Promise<void> {
+    const handle = await this.labelDataCalculated.elementHandle();
+    if (!handle) {
+      throw new Error('Label "Data calculated on the client side." not found');
+    }
+    await handle.waitForElementState('stable');
+  }
 }

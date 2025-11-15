@@ -32,4 +32,30 @@ export class AjaxDataPage {
       hasText: 'Data loaded with AJAX get request.',
     });
   }
+
+  /**
+   * Starts the AJAX request on the page.
+   */
+  async startAjaxRequest(): Promise<void> {
+    await this.buttonAjaxTrigger.click();
+  }
+
+  /**
+   * Waits for the success label to become stable.
+   * Useful to ensure the element is fully rendered and not transitioning.
+   */
+  async waitForSuccessLabelStable(): Promise<void> {
+    const handle = await this.labelSuccess.elementHandle();
+    if (!handle) {
+      throw new Error('Success label not found on the AJAX Data page');
+    }
+    await handle.waitForElementState('stable');
+  }
+
+  /**
+   * Clicks on the success label after it appears and becomes stable.
+   */
+  async clickSuccessLabel(): Promise<void> {
+    await this.labelSuccess.click();
+  }
 }

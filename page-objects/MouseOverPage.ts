@@ -50,4 +50,30 @@ export class MouseOverPage {
     }
     return value;
   }
+
+  /**
+   * Performs the hover and click sequence on the 'Click Me' link.
+   * Returns the total number of clicks recorded.
+   */
+  async interactWithClickMeLink(): Promise<number> {
+    await this.linkClickMe.hover();
+    await this.linkClickMe.click();
+    await this.page.mouse.move(0, 0); // move away
+    await this.linkClickMe.hover();
+    await this.linkClickMe.click();
+    return this.numberContent(this.counterClickMe);
+  }
+
+  /**
+   * Performs the hover and click sequence on the 'Button' link.
+   * Returns the total number of clicks recorded.
+   */
+  async interactWithLinkButton(): Promise<number> {
+    await this.linkButton.hover();
+    await this.linkButton.click();
+    await this.page.mouse.move(0, 0); // move away
+    await this.linkButton.hover();
+    await this.linkButton.click();
+    return this.numberContent(this.counterButton);
+  }
 }
