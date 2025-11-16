@@ -21,5 +21,5 @@ test('Scrollbars', async ({ page }) => {
   await expect(pm.onScrollbarsPage().buttonHiding).toBeInViewport();
 
   // Click the Hiding button
-  await pm.onScrollbarsPage().buttonHiding.click();
+  await pm.onScrollbarsPage().clickHidingButton();
 });

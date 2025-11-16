@@ -15,10 +15,10 @@ test('Non-Breaking Space', async ({ page }) => {
   await expect(pm.onShadowDomPage().headerShadowDom).toBeVisible();
 
   // Click the button to generate a GUID
-  await pm.onShadowDomPage().buttonGUIDGenerator.click();
+  await pm.onShadowDomPage().generateGUID();
 
   // Click the button to copy the generated GUID to the clipboard
-  await pm.onShadowDomPage().buttonCopyClipbboard.click();
+  await pm.onShadowDomPage().copyGUID();
 
   // Retrieve the GUID value from the clipboard
   const clipboardGUID = await pm.onShadowDomPage().getClipboardGUID();

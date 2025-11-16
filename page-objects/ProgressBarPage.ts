@@ -32,6 +32,20 @@ export class ProgressBarPage {
   }
 
   /**
+   * Starts the progress bar by clicking the 'Start' button.
+   */
+  async startProgress(): Promise<void> {
+    await this.buttonStart.click();
+  }
+
+  /**
+   * Stops the progress bar by clicking the 'Stop' button.
+   */
+  async stopProgress(): Promise<void> {
+    await this.buttonStop.click();
+  }
+
+  /**
    * Waits until the progress bar reaches or exceeds the given value.
    * @param value number - the minimum percentage to wait for
    */

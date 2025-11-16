@@ -16,13 +16,13 @@ test('Progress Bar', async ({ page }) => {
   await expect(pm.onProgressBarPage().headerProgressBarPage).toBeVisible();
 
   // Click 'Start' button to start the progress bar
-  await pm.onProgressBarPage().buttonStart.click();
+  await pm.onProgressBarPage().startProgress();
 
   // Wait until the progress bar reaches the desired value (75%)
   await pm.onProgressBarPage().waitForProgressToReach(DESIRED_PROGRESS_BAR_VALUE);
 
   // Click 'Stop' button to stop the progress bar
-  await pm.onProgressBarPage().buttonStop.click();
+  await pm.onProgressBarPage().stopProgress();
 
   // Verify progress value is close to target
   await pm

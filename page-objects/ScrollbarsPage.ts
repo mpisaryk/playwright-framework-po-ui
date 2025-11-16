@@ -26,6 +26,13 @@ export class ScrollbarsPage {
   }
 
   /**
+   * Clicks the Hiding button.
+   */
+  async clickHidingButton(): Promise<void> {
+    await this.buttonHiding.click();
+  }
+
+  /**
    * Scrolls the 'Hiding Button' into the center of the viewport.
    * It uses a direct elementHandle and page.evaluate for reliable scrolling.
    */

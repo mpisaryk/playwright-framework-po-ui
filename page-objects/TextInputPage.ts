@@ -28,4 +28,36 @@ export class TextInputPage {
     // Locate the button with the changeable name using its ID
     this.buttonWithChangeableName = page.locator('#updatingButton');
   }
+
+  /**
+   * Focuses the input field where the new button name is entered.
+   */
+  async focusButtonNameInput(): Promise<void> {
+    await this.inputButtonName.click();
+  }
+
+  /**
+   * Types a new button name into the input field.
+   * @param name string - the name to set for the button
+   */
+  async typeButtonName(name: string): Promise<void> {
+    await this.inputButtonName.fill(name);
+  }
+
+  /**
+   * Clicks the button to apply and update its displayed name.
+   */
+  async applyButtonName(): Promise<void> {
+    await this.buttonWithChangeableName.click();
+  }
+
+  /**
+   * Combines all steps to update the button name in a single method:
+   * @param name string - the new button name
+   */
+  async updateButtonName(name: string): Promise<void> {
+    await this.focusButtonNameInput();
+    await this.typeButtonName(name);
+    await this.applyButtonName();
+  }
 }

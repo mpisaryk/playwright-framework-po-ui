@@ -34,6 +34,20 @@ export class ShadowDomPage {
   }
 
   /**
+   * Clicks the 'Generate' button.
+   */
+  async generateGUID(): Promise<void> {
+    await this.buttonGUIDGenerator.click();
+  }
+
+  /**
+   * Clicks the 'Copy to clipboard' button.
+   */
+  async copyGUID(): Promise<void> {
+    await this.buttonCopyClipbboard.click();
+  }
+
+  /**
    * Reads the current text value from the system clipboard.
    *
    * @returns The text currently in the clipboard, or a message if the Clipboard API is unavailable
