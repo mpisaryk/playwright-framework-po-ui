@@ -12,6 +12,12 @@ export class ClassAttributePage {
   constructor(page: Page) {
     this.page = page;
 
+    /**
+     * Locators are selected based on Playwright best practices (where possible):
+     * - Prefer user-facing attributes over implementation details (like classes or IDs)
+     * - Ensure that locators reflect user-visible behavior
+     */
+
     // Locate the header by its role 'heading' and visible text 'Class Attribute'
     this.headerClassAttributePage = page.getByRole('heading', { name: 'Class Attribute' });
 

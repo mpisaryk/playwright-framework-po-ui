@@ -29,6 +29,7 @@ In this solution, the following scenarios have been automated:
 - Shadow DOM
 - Alerts
 - File Upload
+- Disabled Input
 
 All automated test cases are located in the `tests/` folder.
 
