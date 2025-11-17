@@ -10,7 +10,7 @@ test('Click', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Click' page
-  await pm.onHomePage().clickClickLink();
+  await pm.onHomePage().openClickPage();
 
   // Verify that the header of the 'Click' page is visible
   await expect(pm.onClickPage().headerLinkPage).toBeVisible();

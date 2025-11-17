@@ -10,7 +10,7 @@ test('Dynamic Table', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Dynamic Table' page
-  await pm.onHomePage().clickDynamicTableLink();
+  await pm.onHomePage().openDynamicTablePage();
 
   // Verify that the header of the 'Dynamic Table' page is visible
   await expect(pm.onDynamicTablePage().headerDynamicTablePage).toBeVisible();

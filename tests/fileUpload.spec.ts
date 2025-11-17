@@ -14,7 +14,7 @@ test('File Upload', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Alerts' page
-  await pm.onHomePage().clickFileUploadLink();
+  await pm.onHomePage().openFileUploadPage();
 
   // Verify that the header of the 'File Upload' page is visible
   await expect(pm.onFileUploadPage().headerFileUploadPage).toBeVisible();

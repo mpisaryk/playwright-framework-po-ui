@@ -9,7 +9,7 @@ test('Scrollbars', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Scrollbars' page
-  await pm.onHomePage().clickScrollbarsLink();
+  await pm.onHomePage().openScrollbarsPage();
 
   // Verify that the header of the 'Scrollbars' page is visible
   await expect(pm.onScrollbarsPage().headerScrollbarsPage).toBeVisible();

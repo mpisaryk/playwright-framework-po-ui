@@ -9,7 +9,7 @@ test('Sample App', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Sample App' page
-  await pm.onHomePage().clickSampleAppLink();
+  await pm.onHomePage().openSampleAppPage();
 
   // Verify that the header of the 'Sample App' page is visible
   await expect(pm.onSampleAppPage().headerSampleAppPage).toBeVisible();

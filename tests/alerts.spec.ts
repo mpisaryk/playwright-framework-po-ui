@@ -14,7 +14,7 @@ test('Alerts', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Alerts' page
-  await pm.onHomePage().clickAlertsLink();
+  await pm.onHomePage().openAlertsPage();
 
   // Verify that the header of the 'Alerts' page is visible
   await expect(pm.onAlertsPage().headerAlertsPage).toBeVisible();

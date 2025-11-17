@@ -25,6 +25,7 @@ export class HomePage {
   readonly linkAlers: Locator;
   readonly linkFileUpload: Locator;
   readonly linkAnimatedButton: Locator;
+  readonly linkDisabledInput: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -91,6 +92,9 @@ export class HomePage {
 
     // Link to the 'Animated Button' page
     this.linkAnimatedButton = page.getByRole('link', { name: 'Animated Button' });
+
+    // Link to the 'Animated Button' page
+    this.linkDisabledInput = page.getByRole('link', { name: 'Disabled Input' });
   }
 
   /**
@@ -101,135 +105,142 @@ export class HomePage {
   }
 
   /**
-   * Click on the 'Overlapped Element' link.
+   * Open the 'Overlapped Element' page.
    */
-  async clickOverlappedElementLink(): Promise<void> {
+  async openOverlappedElementPage(): Promise<void> {
     await this.linkOverlappedElement.click();
   }
 
   /**
-   * Click on the 'AJAX Data' link.
+   * Open the 'AJAX Data' page.
    */
-  async clickAjaxDataLink(): Promise<void> {
+  async openAjaxDataPage(): Promise<void> {
     await this.linkAjaxData.click();
   }
 
   /**
-   * Click on the 'Visibility' link.
+   * Open the 'Visibility' page.
    */
-  async clickVisibilityLink(): Promise<void> {
+  async openVisibilityPage(): Promise<void> {
     await this.linkVisibility.click();
   }
 
   /**
-   * Click on the 'Dynamic Table' link.
+   * Open the 'Dynamic Table' page.
    */
-  async clickDynamicTableLink(): Promise<void> {
+  async openDynamicTablePage(): Promise<void> {
     await this.linkDynamicTable.click();
   }
 
   /**
-   * Click on the 'Sample App' link.
+   * Open the 'Sample App' page.
    */
-  async clickSampleAppLink(): Promise<void> {
+  async openSampleAppPage(): Promise<void> {
     await this.linkSampleApp.click();
   }
 
   /**
-   * Click on the 'Text Input' link.
+   * Open the 'Text Input' page.
    */
-  async clickTextInputLink(): Promise<void> {
+  async openTextInputPage(): Promise<void> {
     await this.linkTextInput.click();
   }
 
   /**
-   * Click on the 'Progress Bar' link.
+   * Open the 'Progress Bar' page.
    */
-  async clickProgressBarLink(): Promise<void> {
+  async openProgressBarPage(): Promise<void> {
     await this.linkProgressBar.click();
   }
 
   /**
-   * Click on the 'Class Attribute' link.
+   * Open the 'Class Attribute' page.
    */
-  async clickClassAttributeLink(): Promise<void> {
+  async openClassAttributePage(): Promise<void> {
     await this.linkClassAttribute.click();
   }
 
   /**
-   * Click on the 'Hidden Layers' link.
+   * Open the 'Hidden Layers' page.
    */
-  async clickHiddenLayersLink(): Promise<void> {
+  async openHiddenLayersPage(): Promise<void> {
     await this.linkHiddenLayers.click();
   }
 
   /**
-   * Click on the 'Load Delay' link.
+   * Open the 'Load Delay' page.
    */
-  async clickLoadDelayLink(): Promise<void> {
+  async openLoadDelayPage(): Promise<void> {
     await this.linkLoadDelay.click();
   }
 
   /**
-   * Click on the 'Client Side Delay' link.
+   * Open the 'Client Side Delay' page.
    */
-  async clickClientSideDelayLink(): Promise<void> {
+  async openClientSideDelayPage(): Promise<void> {
     await this.linkClientSideDelay.click();
   }
 
   /**
-   * Click on the 'Click' link.
+   * Open the 'Click' page.
    */
-  async clickClickLink(): Promise<void> {
+  async openClickPage(): Promise<void> {
     await this.linkClick.click();
   }
 
   /**
-   * Click on the 'Scrollbars' link.
+   * Open the 'Scrollbars' page.
    */
-  async clickScrollbarsLink(): Promise<void> {
+  async openScrollbarsPage(): Promise<void> {
     await this.linkScrollbars.click();
   }
 
   /**
-   * Click on the 'Verify Text' link.
+   * Open the 'Verify Text' page.
    */
-  async clickVerifyTextLink(): Promise<void> {
+  async openVerifyTextPage(): Promise<void> {
     await this.linkVerifyText.click();
   }
 
   /**
-   * Click on the 'Mouse Over' link.
+   * Open the 'Mouse Over' page.
    */
-  async clickMouseOverLink(): Promise<void> {
+  async openMouseOverPage(): Promise<void> {
     await this.linkMouseOver.click();
   }
 
   /**
-   * Click on the 'Shadow DOM' link.
+   * Open the 'Shadow DOM' page.
    */
-  async clickShadowDomLink(): Promise<void> {
+  async openShadowDomPage(): Promise<void> {
     await this.linkShadowDom.click();
   }
 
   /**
-   * Click on the 'Alerts' link.
+   * Open the 'Alerts' page.
    */
-  async clickAlertsLink(): Promise<void> {
+  async openAlertsPage(): Promise<void> {
     await this.linkAlers.click();
   }
 
   /**
-   * Click on the 'File Upload' link.
+   * Open the 'File Upload' page.
    */
-  async clickFileUploadLink(): Promise<void> {
+  async openFileUploadPage(): Promise<void> {
     await this.linkFileUpload.click();
   }
 
   /**
-   * Click on the 'Animated Button' link.
+   * Open the 'Animated Button' page.
    */
-  async clickAnimatedButtonLink(): Promise<void> {
+  async openAnimatedButtonPage(): Promise<void> {
     await this.linkAnimatedButton.click();
+  }
+
+  /**
+   * Open the 'Disabled Input' page.
+   */
+  async openDisabledInputPage(): Promise<void> {
+    await this.linkDisabledInput.click();
   }
 }

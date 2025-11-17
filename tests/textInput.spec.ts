@@ -10,7 +10,7 @@ test('Text Input', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Text Input' page
-  await pm.onHomePage().clickTextInputLink();
+  await pm.onHomePage().openTextInputPage();
 
   // Verify that the header of the 'Text Input' page is visible
   await expect(pm.onTextInputPage().headerTextInputPage).toBeVisible();

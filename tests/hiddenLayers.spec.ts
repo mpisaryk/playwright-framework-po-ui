@@ -9,7 +9,7 @@ test('Hidden Layers', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Hidden Layers' page
-  await pm.onHomePage().clickHiddenLayersLink();
+  await pm.onHomePage().openHiddenLayersPage();
 
   // Verify that the header of the 'Hidden Layers' page is visible
   await expect(pm.onHiddenLayersPage().headerHiddenLayersPage).toBeVisible();

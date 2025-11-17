@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { PageManager } from '../page-objects/PageManager';
 
-test('Non-Breaking Space', async ({ page }) => {
+test('Shadow Dom', async ({ page }) => {
   // Initialize the Page Manager to work with Page Objects
   const pm = new PageManager(page);
 
@@ -9,7 +9,7 @@ test('Non-Breaking Space', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Shadow Dom' page
-  await pm.onHomePage().clickShadowDomLink();
+  await pm.onHomePage().openShadowDomPage();
 
   // Verify that the header of the 'Shadow Dom' page is visible
   await expect(pm.onShadowDomPage().headerShadowDom).toBeVisible();

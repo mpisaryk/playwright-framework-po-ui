@@ -10,7 +10,7 @@ test('Verify Text', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Verify Text' page
-  await pm.onHomePage().clickVerifyTextLink();
+  await pm.onHomePage().openVerifyTextPage();
 
   // Verify that the header of the 'Verify Text' page is visible
   await expect(pm.onVerifyTextPage().headerVerifyText).toBeVisible();

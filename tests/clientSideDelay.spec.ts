@@ -9,7 +9,7 @@ test('Client Side Delay', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'AJAX Data' page
-  await pm.onHomePage().clickClientSideDelayLink();
+  await pm.onHomePage().openClientSideDelayPage();
 
   // Verify that the header of the 'AJAX Data' page is visible
   await expect(pm.onClientSideDelayPage().headerClientSideDelayPage).toBeVisible();

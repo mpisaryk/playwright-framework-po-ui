@@ -10,7 +10,7 @@ test('Mouse Over', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Mouse Over' page
-  await pm.onHomePage().clickMouseOverLink();
+  await pm.onHomePage().openMouseOverPage();
 
   // Verify that the header of the 'Mouse Over' page is visible
   await expect(pm.onMouseOverPage().headerMouseOver).toBeVisible();

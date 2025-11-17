@@ -9,7 +9,7 @@ test('Animated Button', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Animated Button' page
-  await pm.onHomePage().clickAnimatedButtonLink();
+  await pm.onHomePage().openAnimatedButtonPage();
 
   // Verify that the header of the 'Animated Button' page is visible
   await expect(pm.onAnimatedButtonPage().headerAnimatedButtonPage).toBeVisible();

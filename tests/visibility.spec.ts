@@ -9,7 +9,7 @@ test('Visibility', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Visibility' page
-  await pm.onHomePage().clickVisibilityLink();
+  await pm.onHomePage().openVisibilityPage();
 
   // Verify that the header of the 'Visibility' page is visible
   await expect(pm.onVisibilityPage().headerVisibilityPage).toBeVisible();

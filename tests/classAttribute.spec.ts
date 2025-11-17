@@ -11,7 +11,7 @@ test('Class Attribute', async ({ page }) => {
   await pm.onHomePage().goToHomePage();
 
   // Click on the link to open the 'Dynamic Table' page
-  await pm.onHomePage().clickClassAttributeLink();
+  await pm.onHomePage().openClassAttributePage();
 
   // Verify that the header of the 'Class Attribute' page is visible
   await expect(pm.onClassAttributePage().headerClassAttributePage).toBeVisible();
