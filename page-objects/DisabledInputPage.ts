@@ -1,4 +1,5 @@
 import { type Locator, type Page } from '@playwright/test';
+import { waitForElementState } from '../helpers/wait-for-element-state';
 
 /**
  * Page Object for the 'Disabled Input' page.
@@ -47,11 +48,7 @@ export class DisabledInputPage {
    * @throws Error if the input field cannot be found
    */
   async fillInputField(text: string): Promise<void> {
-    const handle = await this.inputField.elementHandle();
-    if (!handle) {
-      throw new Error('Input field not found on the AJAX Data page');
-    }
-    await handle.waitForElementState('editable');
+    await waitForElementState(this.inputField, 'editable');
     await this.inputField.fill(text);
   }
 }
