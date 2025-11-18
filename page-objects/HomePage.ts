@@ -26,6 +26,7 @@ export class HomePage {
   readonly linkFileUpload: Locator;
   readonly linkAnimatedButton: Locator;
   readonly linkDisabledInput: Locator;
+  readonly linkAutoWait: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -93,8 +94,11 @@ export class HomePage {
     // Link to the 'Animated Button' page
     this.linkAnimatedButton = page.getByRole('link', { name: 'Animated Button' });
 
-    // Link to the 'Animated Button' page
+    // Link to the 'Disabled Input' page
     this.linkDisabledInput = page.getByRole('link', { name: 'Disabled Input' });
+
+    // Link to the 'Auto Wait' page
+    this.linkAutoWait = page.getByRole('link', { name: 'Auto Wait' });
   }
 
   /**
@@ -242,5 +246,12 @@ export class HomePage {
    */
   async openDisabledInputPage(): Promise<void> {
     await this.linkDisabledInput.click();
+  }
+
+  /**
+   * Open the 'Auto Wait' page.
+   */
+  async openAutoWaitPage(): Promise<void> {
+    await this.linkAutoWait.click();
   }
 }

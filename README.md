@@ -10,26 +10,27 @@ The solution is implemented using **TypeScript + Playwright**.
 
 In this solution, the following scenarios have been automated:
 
-- Overlapped Element  
-- AJAX Data 
-- Animated Button 
-- Visibility  
-- Dynamic Table  
-- Sample App  
-- Text Input  
-- Progress Bar  
 - Class Attribute
 - Hidden Layers
 - Load Delay
+- AJAX Data 
 - Client Side Delay
 - Click
+- Text Input 
 - Scrollbars
+- Dynamic Table 
 - Verify Text
-- Mouse Over
+- Progress Bar 
+- Visibility
+- Sample App
+- Mouse Over  
+- Overlapped Element 
 - Shadow DOM
 - Alerts
-- File Upload
+- File Upload 
+- Animated Button 
 - Disabled Input
+- Auto Wait
 
 All automated test cases are located in the `tests/` folder.
 

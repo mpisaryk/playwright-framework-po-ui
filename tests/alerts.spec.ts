@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { PageManager } from '../page-objects/PageManager';
-import { handleDialog } from '../utils/dialog-handler';
+import { handleDialog } from '../helpers/dialog-handler';
 import { faker } from '@faker-js/faker';
 
 test('Alerts', async ({ page }) => {

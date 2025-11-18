@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { PageManager } from '../page-objects/PageManager';
 import { DIALOG_MESSAGE } from '../test-data/TestData';
-import { handleDialog } from '../utils/dialog-handler';
+import { handleDialog } from '../helpers/dialog-handler';
 
 test('Class Attribute', async ({ page }) => {
   // Initialize the Page Manager to work with Page Objects

@@ -20,6 +20,7 @@ import { AlertsPage } from './AlertsPage';
 import { FileUploadPage } from './FileUploadPage';
 import { AnimatedButtonPage } from './AnimatedButtonPage';
 import { DisabledInputPage } from './DisabledInputPage';
+import { AutoWaitPage } from './AutoWaitPage';
 
 /**
  * PageManager class acts as a central entry point for all Page Objects.
@@ -51,6 +52,7 @@ export class PageManager {
   private readonly fileUploadPage: FileUploadPage;
   private readonly animatedButtonPage: AnimatedButtonPage;
   private readonly disabledInputPage: DisabledInputPage;
+  private readonly autoWaitPage: AutoWaitPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -77,6 +79,7 @@ export class PageManager {
     this.fileUploadPage = new FileUploadPage(this.page);
     this.animatedButtonPage = new AnimatedButtonPage(this.page);
     this.disabledInputPage = new DisabledInputPage(this.page);
+    this.autoWaitPage = new AutoWaitPage(this.page);
   }
 
   /**
@@ -224,5 +227,12 @@ export class PageManager {
    */
   onDisabledInputPage(): DisabledInputPage {
     return this.disabledInputPage;
+  }
+
+  /**
+   * Accessor for the Auto wait object
+   */
+  onAutoWaitPage(): AutoWaitPage {
+    return this.autoWaitPage;
   }
 }

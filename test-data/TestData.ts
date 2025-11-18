@@ -9,3 +9,6 @@ export const EXPECTED_LABEL_TEXT = 'Welcome UserName!';
 export const EXPECTED_CLICK_COUNT = 2;
 export const EXPECTED_FILE_NAME = 'UploadTextFile.txt';
 export const EXPECTED_FILE_UPLOAD_SUCCESS_MESSAGE = '1 file(s) selected';
+export const TARGET_CLICKED_MESSAGE = 'Target clicked.'
+export const AVAILABLE_ITEMS = ['Item 1', 'Item 2', 'Item 3'] as const;
+export type AvailableItems = (typeof AVAILABLE_ITEMS)[number];
