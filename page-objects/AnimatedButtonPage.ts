@@ -31,9 +31,9 @@ export class AnimatedButtonPage {
     this.labelAnimationDone = page.locator('#opstatus', { hasText: 'Animation done' });
   }
 
- /**
- * Initiates the animation process.
- */
+  /**
+   * Initiates the animation process.
+   */
   async triggerAnimationStart(): Promise<void> {
     await this.buttonStartAnimation.click();
   }

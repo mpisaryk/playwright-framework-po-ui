@@ -1,4 +1,5 @@
 import { type Locator, type Page } from '@playwright/test';
+import { waitForElementState } from '../helpers/wait-for-element-state';
 
 /**
  * Page Object for the 'Client Side Delay' page.
@@ -39,16 +40,12 @@ export class ClientSideDelay {
   async triggerClientSideLogic(): Promise<void> {
     await this.buttonTriggerClientSideLogic.click();
   }
-  
+
   /**
-   * Waits for the "Data calculated" label to become stable.
-   * Ensures the element is fully rendered and not in transition.
+   * Waits for the 'Data Calculated' label to become stable and clicks it
    */
-  async waitForDataCalculatedStable(): Promise<void> {
-    const handle = await this.labelDataCalculated.elementHandle();
-    if (!handle) {
-      throw new Error('Label "Data calculated on the client side." not found');
-    }
-    await handle.waitForElementState('stable');
+  async clicLabelDataCalculated(): Promise<void> {
+    await waitForElementState(this.labelDataCalculated, 'stable');
+    await this.labelDataCalculated.click();
   }
 }
