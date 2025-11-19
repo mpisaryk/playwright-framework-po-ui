@@ -1,5 +1,5 @@
 import { type Locator, type Page } from '@playwright/test';
-
+import { waitForElementState } from '../helpers/wait-for-element-state';
 /**
  * Page Object for the 'AJAX Data' page.
  * This class encapsulates locators and actions for this page.
@@ -41,21 +41,10 @@ export class AjaxDataPage {
   }
 
   /**
-   * Waits for the success label to become stable.
-   * Useful to ensure the element is fully rendered and not transitioning.
-   */
-  async waitForSuccessLabelStable(): Promise<void> {
-    const handle = await this.labelSuccess.elementHandle();
-    if (!handle) {
-      throw new Error('Success label not found on the AJAX Data page');
-    }
-    await handle.waitForElementState('stable');
-  }
-
-  /**
-   * Clicks on the success label after it appears and becomes stable.
+   * Waits for the success label to become stable and clicks it
    */
   async clickSuccessLabel(): Promise<void> {
+    await waitForElementState(this.labelSuccess, 'stable');
     await this.labelSuccess.click();
   }
 }

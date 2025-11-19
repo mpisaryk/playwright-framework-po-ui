@@ -17,9 +17,6 @@ test('AJAX Data', async ({ page }) => {
   // Trigger the AJAX request
   await pm.onAjaxDataPage().startAjaxRequest();
 
-  // Wait for the 'Success' label to become stable
-  await pm.onAjaxDataPage().waitForSuccessLabelStable();
-
-  // Click on text of the loaded label
+  // Wait for the 'Success' label to become stable and Click on text of the loaded label
   await pm.onAjaxDataPage().clickSuccessLabel();
 });
