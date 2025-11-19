@@ -15,12 +15,8 @@ test('Click', async ({ page }) => {
   // Verify that the header of the 'Click' page is visible
   await expect(pm.onClickPage().headerLinkPage).toBeVisible();
 
-  // Get the coordinates of the button center
-  const buttonCenter = await pm.onClickPage().getButtonCenter();
-  if (!buttonCenter) return;
-
-  // Perform a mouse click at the center of the button
-  await page.mouse.click(buttonCenter.x, buttonCenter.y);
+  // Get the coordinates of the button center and click it
+  await pm.onClickPage().clickButtonCenter();
 
   // Verify that the button, which ignores standard DOM click events, changed to the expected color
   await expect(pm.onClickPage().buttonIgnoringDomClickEvent).toHaveCSS(

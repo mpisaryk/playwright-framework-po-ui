@@ -10,7 +10,7 @@ test('Class Attribute', async ({ page }) => {
   // Navigate to the Home page
   await pm.onHomePage().goToHomePage();
 
-  // Click on the link to open the 'Dynamic Table' page
+  // Click on the link to open the 'Class Attribute' page
   await pm.onHomePage().openClassAttributePage();
 
   // Verify that the header of the 'Class Attribute' page is visible

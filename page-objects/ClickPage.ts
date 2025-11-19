@@ -28,10 +28,11 @@ export class ClickPage {
   }
 
   /**
-   * Get the center coordinates of the button that ignores standard DOM click events.
-   * @returns Object with x and y coordinates, or null if bounding box is unavailable
+   * Get the center coordinates of the button that ignores standard DOM click events and click the button center.
+   *
+   * @returns Promise<void | null> - Returns null if the bounding box cannot be retrieved.
    */
-  async getButtonCenter(): Promise<{ x: number; y: number } | null> {
+  async clickButtonCenter(): Promise<void | null> {
     // Get the bounding box of the button
     const box = await this.buttonIgnoringDomClickEvent.boundingBox();
     if (!box) return null; // Return null if bounding box is unavailable
@@ -42,7 +43,7 @@ export class ClickPage {
       y: box.y + box.height / 2,
     };
 
-    return centerCoordinates;
+    await this.page.mouse.click(centerCoordinates.x, centerCoordinates.y);
   }
 
   /**
