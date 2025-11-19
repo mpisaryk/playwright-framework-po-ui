@@ -19,11 +19,8 @@ test('Overlapped Element', async ({ page }) => {
   // Verify that the header of the 'Overlapped Element' page is visible
   await expect(pm.onOverlappedElementPage().headerOverlappedElementPage).toBeVisible();
 
-  // Scroll the Name input field into view
-  await pm.onOverlappedElementPage().scrollToNameInput();
-
-  // Fill the Name input field with the generated Playground name
-  await pm.onOverlappedElementPage().inputName.fill(playgroundName);
+  // Scroll the Name input field into view and Fill the Name input field with the generated Playground name
+  await pm.onOverlappedElementPage().fillPlaygroundName(playgroundName);
 
   // Verify that the text was entered correctly
   await expect(pm.onOverlappedElementPage().inputName).toHaveValue(playgroundName);

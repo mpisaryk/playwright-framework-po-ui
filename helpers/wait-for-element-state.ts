@@ -13,7 +13,7 @@ import { Locator } from '@playwright/test';
 export async function waitForElementState(
   element: Locator,
   state: 'visible' | 'stable' | 'hidden' | 'enabled' | 'disabled' | 'editable',
-) {
+): Promise<void> {
   // Get the element handle from the locator
   const handle = await element.elementHandle();
 

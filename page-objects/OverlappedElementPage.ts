@@ -1,4 +1,5 @@
 import { type Locator, type Page } from '@playwright/test';
+import { scrollElementIntoView } from '../helpers/scroll-element-into-view';
 
 /**
  * Page Object for the 'Overlapped Element' page.
@@ -28,20 +29,13 @@ export class OverlappedElementPage {
   }
 
   /**
-   * Scrolls the 'Name' input field into the center of the viewport.
-   * It uses a direct elementHandle and page.evaluate for reliable scrolling.
+   * Scrolls the name input field into view and fills it with the provided text.
+   *
+   * @param playgroundName - The text value to be entered into the name input field.
+   * @returns Promise<void> - Resolves when the field is scrolled into view and filled.
    */
-  async scrollToNameInput(): Promise<void> {
-    // Get the ElementHandle from the Locator
-    const handle = await this.inputName.elementHandle();
-    // Throw an error if the element is not found (safety check)
-    if (!handle) {
-      throw new Error('Element not found: nameInputField');
-    }
-    // Scroll the element into view
-    await this.page.evaluate(
-      (el) => el.scrollIntoView({ block: 'center', inline: 'center' }),
-      handle,
-    );
+  async fillPlaygroundName(playgroundName: string): Promise<void> {
+    await scrollElementIntoView(this.inputName, this.page);
+    await this.inputName.fill(playgroundName);
   }
 }
