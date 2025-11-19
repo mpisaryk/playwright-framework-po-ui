@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { PageManager } from '../page-objects/PageManager';
+import { scrollElementIntoView } from '../helpers/scroll-element-into-view';
 
 test('Scrollbars', async ({ page }) => {
   // Initialize the Page Manager to work with Page Objects
@@ -15,7 +16,7 @@ test('Scrollbars', async ({ page }) => {
   await expect(pm.onScrollbarsPage().headerScrollbarsPage).toBeVisible();
 
   // Scroll the page until the Hiding button appears in the viewport
-  await pm.onScrollbarsPage().scrollToHidingButton();
+  await scrollElementIntoView(pm.onScrollbarsPage().buttonHiding, page);
 
   // Verify that the Hiding button is now visible in the viewport
   await expect(pm.onScrollbarsPage().buttonHiding).toBeInViewport();

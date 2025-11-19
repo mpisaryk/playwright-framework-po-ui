@@ -31,24 +31,4 @@ export class ScrollbarsPage {
   async clickHidingButton(): Promise<void> {
     await this.buttonHiding.click();
   }
-
-  /**
-   * Scrolls the 'Hiding Button' into the center of the viewport.
-   * It uses a direct elementHandle and page.evaluate for reliable scrolling.
-   */
-  async scrollToHidingButton(): Promise<void> {
-    // Get the ElementHandle from the Locator
-    const handle = await this.buttonHiding.elementHandle();
-
-    // Throw an error if the element is not found (safety check)
-    if (!handle) {
-      throw new Error('Element not found: nameInputField');
-    }
-
-    // Scroll the element into view
-    await this.page.evaluate(
-      (el) => el.scrollIntoView({ block: 'center', inline: 'center' }),
-      handle,
-    );
-  }
 }
