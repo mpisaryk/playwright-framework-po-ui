@@ -10,7 +10,7 @@ test('Load Delay', async ({ page }) => {
 
   // Perform parallel actions:
   // Click on the 'Load Delay' link from the Home page
-  // Wait for the page to reach the "load" state (ensuring all resources are loaded)
+  // Wait for the page to reach the 'load' state (ensuring all resources are loaded)
   await Promise.all([pm.onHomePage().openLoadDelayPage(), page.waitForLoadState('load')]);
 
   // Verify that the header of the 'Load Delay' page is visible

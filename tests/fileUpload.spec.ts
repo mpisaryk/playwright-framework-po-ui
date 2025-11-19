@@ -13,7 +13,7 @@ test('File Upload', async ({ page }) => {
   // Navigate to the Home page
   await pm.onHomePage().goToHomePage();
 
-  // Click on the link to open the 'Alerts' page
+  // Click on the link to open the 'File Upload' page
   await pm.onHomePage().openFileUploadPage();
 
   // Verify that the header of the 'File Upload' page is visible

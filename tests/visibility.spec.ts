@@ -29,14 +29,18 @@ test('Visibility', async ({ page }) => {
   await expect(pm.onVisibilityPage().buttonZeroWidth).toBeHidden();
 
   // 'Overlapped' button is covered by another element
+  // Get IDs of the topmost elements at all four corners of the button
   const cornerElementIds = await pm.onVisibilityPage().getTopElementIdsAtButtonCorners();
-  const overlappedButtonId = await pm.onVisibilityPage().buttonOverlapped.getAttribute('id');
 
+  // Get the ID of the target button that is expected to be overlapped
+  const overlappedButtonId = await pm.onVisibilityPage().getOverlappedButtonId();
+
+  // Check that every corner is covered by another element (not the button itself)
   const allCornersCovered = cornerElementIds.every(
     (id) => id !== overlappedButtonId && id !== null,
   );
 
-  // Expect that all corners are covered by another element
+  // Verify that the button is fully overlapped at all corners
   expect(allCornersCovered).toBeTruthy();
 
   // 'Opacity 0' button has opacity set to 0
