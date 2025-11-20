@@ -1,48 +1,48 @@
 {
-    "name": "playwright_ui_tests_examples",
-    "version": "1.0.0",
-    "main": "index.js",
-    "scripts": {
-        "lint": "eslint . --ext .ts,.js",
-        "lint:fix": "eslint . --ext .ts,.js --fix",
-        "format": "prettier --write \"**/*.{js,ts,json,md}\"",
-        "format:check": "prettier --check \"**/*.{js,ts,json,md}\"",
-        "test:prod:headed": "cross-env ENVIRONMENT=prod npx playwright test --project=chromium --headed",
-        "test:dev:headed": "cross-env ENVIRONMENT=dev npx playwright test --project=chromium --headed",
-        "test:prod:headless": "cross-env ENVIRONMENT=prod npx playwright test --project=chromium",
-        "test:dev:headless": "cross-env ENVIRONMENT=dev npx playwright test --project=chromium",
-        "allure:serve": "allure serve allure-results",
-        "test:prod:headless:report": "npm run test:prod:headless && npm run allure:serve",
-        "test:dev:headless:report": "npm run test:dev:headless && npm run allure:serve"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/mpisaryk/Playwright_UI_tests_examples.git"
-    },
-    "keywords": [],
-    "author": "Mikhail Pisaryk",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/mpisaryk/Playwright_UI_tests_examples/issues"
-    },
-    "homepage": "https://github.com/mpisaryk/Playwright_UI_tests_examples#readme",
-    "description": "",
-    "devDependencies": {
-        "@faker-js/faker": "^10.0.0",
-        "@playwright/test": "^1.55.1",
-        "@types/dotenv": "^6.1.1",
-        "@types/node": "^24.5.2",
-        "@typescript-eslint/eslint-plugin": "^8.44.0",
-        "@typescript-eslint/parser": "^8.44.0",
-        "allure-commandline": "^2.34.1",
-        "allure-playwright": "^3.4.1",
-        "cross-env": "^10.0.0",
-        "eslint": "^9.35.0",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-playwright": "^2.2.2",
-        "prettier": "^3.6.2"
-    },
-    "dependencies": {
-        "dotenv": "^17.2.2"
-    }
+  "name": "playwright_ui_tests_examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "format": "prettier --write \"**/*.{js,ts,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,json,md}\"",
+    "test:prod:headed": "cross-env ENVIRONMENT=prod npx playwright test --project=chromium --headed",
+    "test:dev:headed": "cross-env ENVIRONMENT=dev npx playwright test --project=chromium --headed",
+    "test:prod:headless": "cross-env ENVIRONMENT=prod npx playwright test --project=chromium",
+    "test:dev:headless": "cross-env ENVIRONMENT=dev npx playwright test --project=chromium",
+    "allure:serve": "allure serve allure-results",
+    "test:prod:headless:report": "npm run test:prod:headless && npm run allure:serve",
+    "test:dev:headless:report": "npm run test:dev:headless && npm run allure:serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpisaryk/Playwright_UI_tests_examples.git"
+  },
+  "keywords": [],
+  "author": "Mikhail Pisaryk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mpisaryk/Playwright_UI_tests_examples/issues"
+  },
+  "homepage": "https://github.com/mpisaryk/Playwright_UI_tests_examples#readme",
+  "description": "",
+  "devDependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "@playwright/test": "^1.55.1",
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^24.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.1",
+    "cross-env": "^10.0.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.2.2",
+    "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2"
+  }
 }
